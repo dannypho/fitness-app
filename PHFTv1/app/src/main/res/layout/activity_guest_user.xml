@@ -8,45 +8,44 @@
     android:background="#fce8e8">
 
     <TextView
-        android:id="@+id/appTitle"
+        android:id="@+id/guestWelcomeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to PHFT"
+        android:text="Welcome, Guest!"
         android:textSize="24sp"
         android:textColor="#000000"
         android:paddingBottom="16dp" />
-
     <TextView
         android:id="@+id/welcomeMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Track your health and fitness journey with ease!"
+        android:text="Explore our app features and learn how we can help you on your health and fitness journey."
         android:textSize="16sp"
         android:textColor="#000000"
-        android:paddingBottom="32dp" />
+        android:gravity="center"
+        android:paddingBottom="24dp" />
 
     <Button
-        android:id="@+id/btnGeneralUser"
+        android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login as General User"  />
-<!--        android:onClick="onGeneralUserLoginClick"-->
+        android:text="Login"  />
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"  />
+    <!--        android:onClick="onGeneralUserLoginClick"-->
 
 
     <Button
-        android:id="@+id/btnGuestUser"
+        android:id="@+id/btnContinueAsGuest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Continue as Guest"
         android:paddingTop="16dp"  />
-<!--        android:onClick="onGuestUserClick"-->
+    <!--        android:onClick="onGuestUserClick"-->
 
 
-    <Button
-        android:id="@+id/btnPersonalTrainer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login as Personal Trainer"
-        android:paddingTop="16dp" />
-<!--       android:onClick="onPersonalTrainerLoginClick"-->
+
 </LinearLayout>
