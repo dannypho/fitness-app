@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/login_background">
+
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/back_button_reward_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:layout_alignParentStart="true"
+        android:layout_margin="16dp" />
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PHFT Reward Center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp" />
+
+    <!-- User Points -->
+    <TextView
+        android:id="@+id/user_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Points: 0"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_below="@id/back_button_reward_center"
+        android:layout_marginTop="40dp" />
+
+    <!-- User Levels -->
+    <TextView
+        android:id="@+id/user_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Level: Silver"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_below="@id/user_points"
+        android:layout_marginTop="8dp" />
+
+    <!-- Daily Challenge Button -->
+    <Button
+        android:id="@+id/daily_challenge_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_level"
+        android:layout_marginTop="20dp"
+        android:text="Participate in Daily Challenge"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white" />
+
+    <!-- Leaderboard Button -->
+    <Button
+        android:id="@+id/leaderboard_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/daily_challenge_button"
+        android:layout_marginTop="20dp"
+        android:text="View Leaderboard"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white" />
+
+    <!-- Browse Reward Products Button -->
+    <Button
+        android:id="@+id/browse_products_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/leaderboard_button"
+        android:layout_marginTop="20dp"
+        android:text="Browse Reward Products"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white" />
+
+    <!-- Redeem Points Button -->
+    <Button
+        android:id="@+id/redeem_points_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/browse_products_button"
+        android:layout_marginTop="20dp"
+        android:text="Redeem Your Points"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white" />
+
+    <!-- Roll of Successfully Redeemed Products -->
+    <TextView
+        android:id="@+id/redeemed_products_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Successfully Redeemed Products:"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_below="@id/redeem_points_button"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/redeemed_products_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="None yet"
+        android:textColor="@color/white"
+        android:layout_below="@id/redeemed_products_title"
+        android:layout_marginTop="10dp" />
+
+</RelativeLayout>

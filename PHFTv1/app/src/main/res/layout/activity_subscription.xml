@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/login_background">
+
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/back_button_subscription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:layout_alignParentStart="true"
+        android:layout_margin="16dp" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Your Subscription"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_below="@id/back_button_subscription"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <!-- Monthly Subscription Option -->
+    <LinearLayout
+        android:id="@+id/monthly_option_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_text"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_corner_username"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monthly Subscription"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Ad-Free Experience\n• Access to Special Training Videos\n• Personal Trainer Instructions"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$9.99/month"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/subscribe_monthly_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Subscribe Monthly"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <!-- Annual Subscription Option -->
+    <LinearLayout
+        android:id="@+id/annual_option_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/monthly_option_layout"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_corner_username"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Annual Subscription"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="• Ad-Free Experience\n• Access to Special Training Videos\n• Personal Trainer Instructions\n• 15% Discount"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$99.99/year (Save 15%)"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/subscribe_annual_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Subscribe Annually"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</RelativeLayout>

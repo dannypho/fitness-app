@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/login_background">
+
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/back_button_trainer_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:layout_alignParentStart="true"
+        android:layout_margin="16dp" />
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Review Your Trainer"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp" />
+
+    <!-- Rating Bar Title -->
+    <TextView
+        android:id="@+id/rate_trainer_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rate your trainer:"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true" />
+
+    <!-- Rating Bar for Trainer Rating -->
+    <RatingBar
+        android:id="@+id/trainer_rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:numStars="5"
+        android:stepSize="1.0"
+        android:layout_below="@id/rate_trainer_text"
+        android:layout_centerHorizontal="true"
+        android:progressTint="@color/gold"
+        android:secondaryProgressTint="@color/gold"
+        android:progressBackgroundTint="@color/light_gray" />
+
+
+    <!-- Feedback Text Area -->
+    <EditText
+        android:id="@+id/feedback_input"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:hint="Write your feedback here..."
+        android:background="@drawable/rounded_corner_username"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:layout_below="@id/trainer_rating_bar" />
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/submit_feedback_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Submit Feedback"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:layout_below="@id/feedback_input" />
+
+</RelativeLayout>

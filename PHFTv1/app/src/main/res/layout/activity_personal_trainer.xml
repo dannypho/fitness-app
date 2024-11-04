@@ -7,14 +7,26 @@
     android:layout_height="match_parent"
     android:background="@drawable/login_background"
     android:gravity="center"
-    android:padding="16dp"
-    tools:context=".MainActivity">
+    android:padding="16dp">
+<!--    tools:context=".PersonalTrainerLoginActivity"-->
+
 
     <LinearLayout
         android:layout_width="352dp"
         android:layout_height="564dp"
         android:gravity="center"
         android:orientation="vertical">
+
+        <!-- Title for Personal Trainer Login Page -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Personal Trainer Login"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
 
         <ImageView
             android:layout_width="160dp"
@@ -47,6 +59,7 @@
             android:textColorHint="@color/white"
             android:textSize="20sp" />
 
+        <!-- Login Button -->
         <Button
             android:id="@+id/login_btn"
             android:layout_width="match_parent"
@@ -54,40 +67,19 @@
             android:layout_marginTop="20dp"
             android:backgroundTint="@color/black"
             android:padding="3dp"
-            android:text="Login"
+            android:text="Login as Trainer"
             android:textColor="#FFFFFF" />
 
+        <!-- Footer Text (App Version) -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="v1 Use 'u' for Username and 'p' for Password"
+            android:text="App Version 1.0"
             android:textColor="@color/white"
             android:textSize="15sp" />
 
-        <!-- Horizontal LinearLayout for Social Media Icons -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <!--            <ImageView-->
-            <!--                android:layout_width="40dp"-->
-            <!--                android:layout_height="40dp"-->
-            <!--                android:layout_margin="16dp"-->
-            <!--                android:id="@+id/x_btn"-->
-            <!--                android:src="@drawable/logox" />-->
-
-            <!--            <ImageView-->
-            <!--                android:layout_width="40dp"-->
-            <!--                android:layout_height="40dp"-->
-            <!--                android:layout_margin="16dp"-->
-            <!--                android:id="@+id/instagram_btn"-->
-            <!--                android:src="@drawable/instagram_iogo" />-->
-        </LinearLayout>
-
+        <!-- Back Button -->
         <Button
             android:id="@+id/back_btn"
             android:layout_width="187dp"

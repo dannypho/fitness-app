@@ -13,6 +13,39 @@
         android:theme="@style/Theme.PHFTv1"
         tools:targetApi="31">
         <activity
+            android:name=".RewardCenter"
+            android:exported="false" />
+        <activity
+            android:name=".Subscription"
+            android:exported="false" />
+        <activity
+            android:name=".ReviewTrainer"
+            android:exported="false" />
+        <activity
+            android:name=".ExercisePlans"
+            android:exported="false" />
+        <activity
+            android:name=".ProgressMonitoring"
+            android:exported="false" />
+        <activity
+            android:name=".Tracking"
+            android:exported="false" />
+        <activity
+            android:name=".GoalSetting"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityCategories"
+            android:exported="false" />
+        <activity
+            android:name=".GuestSignUp"
+            android:exported="false" />
+        <activity
+            android:name=".PersonalTrainer"
+            android:exported="false" />
+        <activity
+            android:name=".signUp"
+            android:exported="false" />
+        <activity
             android:name=".Dashboard"
             android:exported="false" />
         <activity

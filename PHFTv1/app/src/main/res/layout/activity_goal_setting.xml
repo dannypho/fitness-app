@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background">
+
+    <Button
+        android:id="@+id/back_buttonGOAL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:layout_alignParentStart="true"
+        android:layout_margin="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_below="@id/back_buttonGOAL">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Your Fitness Goals"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Running Goal Field -->
+        <EditText
+            android:id="@+id/running_goal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_corner_username"
+            android:hint="e.g., Run 5 miles a week"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="18sp" />
+
+        <!-- Calories Goal Field -->
+        <EditText
+            android:id="@+id/calories_goal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_corner_username"
+            android:hint="e.g., Burn 2000 calories a week"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="18sp" />
+
+        <!-- Weight Goal Field -->
+        <EditText
+            android:id="@+id/weight_goal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_corner_username"
+            android:hint="e.g., Lose/Gain 10 lbs a month"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="18sp" />
+
+        <!-- Save Goals Button -->
+        <Button
+            android:id="@+id/save_goals_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Goals"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+</RelativeLayout>
