@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="352dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- Title for Guest Signup Page -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guest Signup"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Profile Photo Upload -->
+            <ImageView
+                android:id="@+id/profile_photo"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_profile"
+                android:contentDescription="Profile Photo"
+                android:background="@drawable/rounded_corner_username" />
+
+            <!-- Name Field -->
+            <Button
+                android:id="@+id/upload_photo_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="Upload Profile Photo"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/name_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner_username"
+                android:hint="Full Name"
+                android:inputType="textPersonName"
+                android:padding="7dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="20sp" />
+
+            <!-- Age Field -->
+            <EditText
+                android:id="@+id/age_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_corner_username"
+                android:hint="Age"
+                android:inputType="number"
+                android:padding="7dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="20sp" />
+
+            <!-- Weight Field -->
+            <EditText
+                android:id="@+id/weight_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_corner_username"
+                android:hint="Weight (LB)"
+                android:inputType="numberDecimal"
+                android:padding="7dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="20sp" />
+
+            <!-- Height Field -->
+            <EditText
+                android:id="@+id/height_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_corner_username"
+                android:hint="Height (cm)"
+                android:inputType="numberDecimal"
+                android:padding="7dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="20sp" />
+
+            <!-- Fitness Goals Field -->
+<!--            <EditText-->
+<!--                android:id="@+id/fitness_goals_input"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:background="@drawable/rounded_corner_username"-->
+<!--                android:hint="Fitness Goals (optional)"-->
+<!--                android:inputType="textMultiLine"-->
+<!--                android:padding="7dp"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textColorHint="@color/white"-->
+<!--                android:textSize="20sp" />-->
+
+            <!-- Signup Button -->
+            <Button
+                android:id="@+id/signup_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/black"
+                android:padding="3dp"
+                android:text="Sign Up as Guest"
+                android:textColor="#FFFFFF" />
+
+            <!-- Back Button -->
+            <Button
+                android:id="@+id/back_btnGuest"
+                android:layout_width="187dp"
+                android:layout_height="68dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/black"
+                android:padding="3dp"
+                android:text="Back"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

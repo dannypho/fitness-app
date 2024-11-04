@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background">
+
+    <Button
+        android:id="@+id/back_buttonPROGRESS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:layout_alignParentStart="true"
+        android:layout_margin="16dp" />
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Progress Monitoring"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:id="@+id/activity_buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_text"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Activity Buttons -->
+        <Button
+            android:id="@+id/running_progress_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Running Progress"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/walking_progress_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Walking Progress"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/cycling_progress_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Cycling Progress"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/yoga_progress_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Yoga Progress"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/hiit_progress_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View HIIT Progress"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/weightlifting_progress_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Weightlifting Progress"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/progress_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="               Select an activity to view progress"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_below="@id/activity_buttons_layout"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

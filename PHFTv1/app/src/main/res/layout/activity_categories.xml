@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background">
+
+    <Button
+        android:id="@+id/back_buttonCAT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:layout_alignParentStart="true"
+        android:layout_margin="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_below="@id/back_buttonCAT">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Activity Categories"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Running Button -->
+        <Button
+            android:id="@+id/running_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Running"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Walking Button -->
+        <Button
+            android:id="@+id/walking_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Walking"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Cycling Button -->
+        <Button
+            android:id="@+id/cycling_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cycling"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Yoga Button -->
+        <Button
+            android:id="@+id/yoga_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Yoga"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp" />
+
+        <!-- HIIT Button -->
+        <Button
+            android:id="@+id/hiit_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HIIT"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Weightlifting Button -->
+        <Button
+            android:id="@+id/weightlifting_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Weightlifting"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Add New Activity Button -->
+        <Button
+            android:id="@+id/add_activity_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add New Activity Type"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white" />
+
+        <!-- Create Workout Plan Button -->
+        <Button
+            android:id="@+id/create_workout_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Workout Plan"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+</RelativeLayout>

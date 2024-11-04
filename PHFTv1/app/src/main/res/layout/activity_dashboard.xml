@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-
         <ImageView
             android:id="@+id/profile_icon"
             android:layout_width="40dp"
@@ -20,13 +19,14 @@
             android:layout_marginTop="16dp"
             android:src="@drawable/ic_profile"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/hide_bottom_view_on_scroll_behavior" />
 
         <TextView
             android:id="@+id/welcome_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="              Welcome to PHFT"
+            android:text="                Welcome to PHFT"
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_marginTop="16dp"
@@ -36,10 +36,10 @@
             app:layout_constraintTop_toBottomOf="@id/profile_icon" />
 
         <Button
-            android:id="@+id/btn_activity_tracker"
+            android:id="@+id/btn_activity_categories"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Activity Tracker"
+            android:text="Activity Categories"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             app:layout_constraintTop_toBottomOf="@id/welcome_text"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,18 @@
             android:layout_height="wrap_content"
             android:text="Goal Setting"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            app:layout_constraintTop_toBottomOf="@id/btn_activity_tracker"
+            app:layout_constraintTop_toBottomOf="@id/btn_activity_categories"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_tracking"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Tracking"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:layout_constraintTop_toBottomOf="@id/btn_goal_setting"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="8dp" />
@@ -63,7 +74,7 @@
             android:layout_height="wrap_content"
             android:text="Progress Monitoring"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            app:layout_constraintTop_toBottomOf="@id/btn_goal_setting"
+            app:layout_constraintTop_toBottomOf="@id/btn_tracking"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="8dp" />
@@ -116,7 +127,7 @@
             android:id="@+id/btn_settings"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Settings"
+            android:text="Settings (not implemented)"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             app:layout_constraintTop_toBottomOf="@id/btn_subscription"
             app:layout_constraintStart_toStartOf="parent"
@@ -127,12 +138,12 @@
             android:id="@+id/btn_back"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="167dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:text="BACK"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_subscription" />
+            app:layout_constraintTop_toBottomOf="@id/btn_settings" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

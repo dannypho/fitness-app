@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    android:padding="16dp">
+
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/back_button_exercise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:layout_alignParentStart="true"
+        android:layout_margin="16dp" />
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exercise Plans"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp" />
+
+    <!-- Section for Pre-set Workout Routines -->
+    <LinearLayout
+        android:id="@+id/preset_workout_routines_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/back_button_exercise"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pre-set Workout Routines"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/preset_routine_yoga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Yoga Routine"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/preset_routine_hiit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HIIT Routine"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/preset_routine_weightlifting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Weightlifting Routine"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp" />
+    </LinearLayout>
+
+    <!-- Section for Custom Workout Plan -->
+    <LinearLayout
+        android:id="@+id/custom_workout_plan_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/preset_workout_routines_section"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Your Own Workout"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/create_custom_plan_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Custom Plan"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</RelativeLayout>

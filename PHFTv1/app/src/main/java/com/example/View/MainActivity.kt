@@ -31,5 +31,16 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, GuestUser::class.java)
             startActivity(intent)
         }
+
+
+        findViewById<Button>(R.id.btnSignUpUser).setOnClickListener {
+            val intent = Intent(this, signUp::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.btnPersonalTrainer).setOnClickListener {
+            val intent = Intent(this, PersonalTrainer::class.java)
+            startActivity(intent)
+        }
     }
 }

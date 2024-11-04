@@ -5,48 +5,76 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#fce8e8">
+    android:background="#FCE8E8"
+    android:padding="24dp">
 
+    <!-- App Title -->
     <TextView
         android:id="@+id/appTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome to PHFT"
-        android:textSize="24sp"
+        android:textSize="26sp"
         android:textColor="#000000"
-        android:paddingBottom="16dp" />
+        android:fontFamily="sans-serif-medium"
+        android:paddingBottom="20dp" />
 
+    <!-- Welcome Message -->
     <TextView
         android:id="@+id/welcomeMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Track your health and fitness journey with ease!"
         android:textSize="16sp"
-        android:textColor="#000000"
-        android:paddingBottom="32dp" />
+        android:textColor="#555555"
+        android:fontFamily="sans-serif"
+        android:paddingBottom="36dp" />
 
+    <!-- Login as General User Button -->
     <Button
         android:id="@+id/btnGeneralUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login as General User"  />
-<!--        android:onClick="onGeneralUserLoginClick"-->
+        android:text="Login as General User"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="20dp"
+        android:layout_marginBottom="16dp" />
 
+    <!-- Sign Up Button -->
+    <Button
+        android:id="@+id/btnSignUpUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:backgroundTint="#2196F3"
+        android:textColor="#FFFFFF"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="20dp"
+        android:layout_marginBottom="16dp" />
 
+    <!-- Continue as Guest Button -->
     <Button
         android:id="@+id/btnGuestUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Continue as Guest"
-        android:paddingTop="16dp"  />
-<!--        android:onClick="onGuestUserClick"-->
+        android:backgroundTint="#FF9800"
+        android:textColor="#FFFFFF"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="20dp"
+        android:layout_marginBottom="16dp" />
 
-
+    <!-- Login as Personal Trainer Button -->
     <Button
         android:id="@+id/btnPersonalTrainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login as Personal Trainer"
-        android:paddingTop="16dp" />
-<!--       android:onClick="onPersonalTrainerLoginClick"-->
+        android:backgroundTint="#FF5722"
+        android:textColor="#FFFFFF"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="20dp" />
+
 </LinearLayout>
