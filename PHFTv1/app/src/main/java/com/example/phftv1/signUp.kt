@@ -25,5 +25,6 @@ class signUp : AppCompatActivity() {
             val intent = Intent(this, UserPersonalInformation::class.java)
             startActivity(intent)
         }
+
     }
 }
