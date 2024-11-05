@@ -1,3 +1,5 @@
+package com.example.Model
+
 data class Subscription(
     val id: Int,
     val userId: Int, // ID of the user holding the subscription

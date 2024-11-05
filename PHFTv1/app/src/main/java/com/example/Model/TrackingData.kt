@@ -1,3 +1,5 @@
+package com.example.Model
+
 data class TrackingData(
     val id: Int,
     val userId: Int, // ID of the user whose data is being tracked

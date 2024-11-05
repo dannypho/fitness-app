@@ -1,3 +1,5 @@
+package com.example.Controller
+
 class SubscriptionController {
     // Subscribe to a membership plan
     fun subscribe() {}

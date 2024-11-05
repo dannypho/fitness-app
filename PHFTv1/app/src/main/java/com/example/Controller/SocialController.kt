@@ -1,3 +1,5 @@
+package com.example.Controller
+
 class SocialController {
     // Share an achievement on social media
     fun shareAchievement() {}

@@ -1,3 +1,5 @@
+package com.example.Controller
+
 class ProgressController {
     // Get user progress over time
     fun getProgress() {}

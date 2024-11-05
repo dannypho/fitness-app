@@ -1,3 +1,5 @@
+package com.example.Controller
+
 class NotificationController {
     // Send activity reminders
     fun sendActivityReminder() {}

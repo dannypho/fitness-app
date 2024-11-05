@@ -1,3 +1,5 @@
+package com.example.Controller
+
 class TrackingController {
     // Track specific activity metrics
     fun trackActivity() {}

@@ -1,3 +1,5 @@
+package com.example.Model
+
 data class Leaderboard(
     val id: Int,
     val month: String, // Month for this leaderboard, e.g., "October 2024"

@@ -1,3 +1,5 @@
+package com.example.Controller
+
 class GoalController {
     // Set a personal fitness goal
     fun setGoal() {}

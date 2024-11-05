@@ -1,3 +1,5 @@
+package com.example.Model
+
 data class Payment(
     val id: Int,
     val userId: Int, // ID of the user making the payment

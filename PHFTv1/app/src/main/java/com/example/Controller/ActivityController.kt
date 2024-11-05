@@ -1,3 +1,5 @@
+package com.example.Controller
+
 class ActivityController {
     // Log a new activity
     fun logActivity() {}

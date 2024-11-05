@@ -1,3 +1,5 @@
+package com.example.Model
+
 data class Review(
     val id: Int,
     val userId: Int, // ID of the user who submitted the review

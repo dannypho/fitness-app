@@ -1,3 +1,5 @@
+package com.example.Controller
+
 class AdvertisementController {
     // Display internal advertisements for workout plans, trainers, etc.
     fun displayInternalAds() {}

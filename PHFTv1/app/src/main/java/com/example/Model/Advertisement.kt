@@ -1,3 +1,5 @@
+package com.example.Model
+
 data class Advertisement(
     val id: Int,
     val title: String,

@@ -1,3 +1,5 @@
+package com.example.Controller
+
 class ExercisePlanController {
     // Follow a pre-set workout routine
     fun followPresetRoutine() {}

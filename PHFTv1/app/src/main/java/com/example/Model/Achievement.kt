@@ -1,3 +1,5 @@
+package com.example.Model
+
 data class Achievement(
     val id: Int,
     val name: String,
