@@ -1,3 +1,5 @@
+import com.example.Model.Exercise
+
 data class WorkoutPlan(
     val id: Int,
     val userId: Int, // ID of the user for whom the plan is created

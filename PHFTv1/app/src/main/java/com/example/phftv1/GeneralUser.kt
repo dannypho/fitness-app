@@ -57,6 +57,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.Controller.RegistrationController
 
 import java.io.BufferedReader
 import java.io.File
@@ -91,36 +92,8 @@ class GeneralUser : AppCompatActivity() {
         loginBtn.setOnClickListener {
             val username = usernameInput.text.toString().trim()
             val password = passwordInput.text.toString().trim()
-
-            // Input validation
-            if (username.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Please enter both username and password", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-            // Check credentials
-            if (checkCredentials(username, password)) {
-                Log.i("USER CHECK", "Login successful")
-                // Navigate to the next activity
-                val intent = Intent(this, Dashboard::class.java)
-                startActivity(intent)
-            } else {
-                Log.i("USER CHECK", "Login unsuccessful")
-                Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show()
-            }
-
-            Log.i("TEST Credentials", "Username: $username and Password: $password")
+            RegistrationController().login(username, password)
         }
-    }
 
-    private fun checkCredentials(username: String, password: String): Boolean {
-        // Hardcoded credentials for testing
-        val credentials = mapOf(
-            "user1" to "password1",
-            "user2" to "password2",
-            "u" to "p",
-            "user3" to "password3"
-        )
-        return credentials[username] == password
     }
 }

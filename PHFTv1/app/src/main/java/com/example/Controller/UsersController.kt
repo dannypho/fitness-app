@@ -1,13 +1,21 @@
 package com.example.Controller
 
+import android.util.Log
 import com.example.Model.User
 
 class UsersController {
    private val users: HashMap<String, User> = hashMapOf()
 
     public fun add(user: User, userName:String, password:String){
-        users.put(user.id, user)
+        users[user.id] = user
         SecurityController().addSignInInfo(user.id,userName,password)
+        Log.i("general user",user.toString())
+        Log.i("users",users.toString())
+    }
+    public fun addGuest(user: User){
+        users[user.id] = user
+        Log.i("guest user", user.toString())
+        Log.i("users", users.toString())
     }
 
     public fun getUID(userName:String): String {

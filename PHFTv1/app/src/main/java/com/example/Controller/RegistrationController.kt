@@ -1,12 +1,17 @@
 package com.example.Controller
 
+import android.util.Log
+import com.example.Model.GlobalConstants
 import com.example.Model.User
 import java.util.UUID
 
 class RegistrationController  {
     // Register a new user
-    fun register(user: User,userName: String, password:String ) {
+   public fun register(userName: String, password:String, name:String ) {
+        var user:User = User()
         user.id = UUID.randomUUID().toString()
+        user.name = name
+        user.role = GlobalConstants.GENERAL
         UsersController().add(user, userName, password)
     }
 
@@ -19,6 +24,17 @@ class RegistrationController  {
             }
         }
 return user
+    }
+
+    fun addGuestUser(name:String, age:Int, weight:String, height:String){
+        val user: User = User()
+        user.id = UUID.randomUUID().toString()
+        user.name = name
+        user.role = GlobalConstants.GUEST
+        user.attributes["age"] = age
+        user.attributes["weight"] = weight
+        user.attributes["height"] = height
+        Log.i("User", user.toString())
     }
 
     // Logout a user

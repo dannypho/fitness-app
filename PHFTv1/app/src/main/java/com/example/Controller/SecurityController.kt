@@ -1,5 +1,7 @@
 package com.example.Controller
 
+import android.util.Log
+
 class SecurityController {
     private val validationMap: HashMap<String, HashMap<String,String>> = hashMapOf()
 
@@ -16,6 +18,7 @@ class SecurityController {
         val innerMap = validationMap.getOrPut(UID) { hashMapOf() }
 // Add the userName and password to the inner map
         innerMap[userName] = password
+        Log.i("credentials", validationMap.toString())
     }
 
 }
