@@ -9,13 +9,9 @@ class UsersController {
     public fun add(user: User, userName:String, password:String){
         users[user.id] = user
         SecurityController().addSignInInfo(user.id,userName,password)
-        Log.i("general user",user.toString())
-        Log.i("users",users.toString())
     }
     public fun addGuest(user: User){
         users[user.id] = user
-        Log.i("guest user", user.toString())
-        Log.i("users", users.toString())
     }
 
     public fun getUID(userName:String): String {
@@ -26,6 +22,7 @@ class UsersController {
         }
         return UID
     }
+
     public fun getUser(userName: String): User {
         val UID: String = getUID(userName)
         return users.getValue(UID)

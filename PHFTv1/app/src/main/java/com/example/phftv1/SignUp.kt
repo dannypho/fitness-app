@@ -6,12 +6,10 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.Controller.RegistrationController
 
 
-class signUp : AppCompatActivity() {
+class SignUp : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -24,7 +22,7 @@ class signUp : AppCompatActivity() {
             val name = nameEditText.text.toString()
             val username = usernameEditText.text.toString()
             val password = passwordEditText.text.toString()
-            RegistrationController().register(username,password,name)
+             RegistrationController().registerUser(username,password,name)
         }
 
 
@@ -38,6 +36,7 @@ class signUp : AppCompatActivity() {
             val intent = Intent(this, UserPersonalInformation::class.java)
             startActivity(intent)
         }
+
 
     }
 }

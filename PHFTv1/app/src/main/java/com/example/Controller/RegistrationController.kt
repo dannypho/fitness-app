@@ -6,8 +6,9 @@ import com.example.Model.User
 import java.util.UUID
 
 class RegistrationController  {
+    final var currentUser: User = User()
     // Register a new user
-   public fun register(userName: String, password:String, name:String ) {
+   public fun registerUser(userName: String, password:String, name:String ) {
         var user:User = User()
         user.id = UUID.randomUUID().toString()
         user.name = name
@@ -21,25 +22,32 @@ class RegistrationController  {
         if (UsersController().getUID(userName)!= ""){
             if(SecurityController().isAuthenticated(userName, password)){
                 user = UsersController().getUser(userName)
+                currentUser = user
             }
         }
 return user
     }
 
-    fun addGuestUser(name:String, age:Int, weight:String, height:String){
+    fun addGuestUser(name:String, age:Int, weight:Int, height:Int){
         val user: User = User()
         user.id = UUID.randomUUID().toString()
         user.name = name
         user.role = GlobalConstants.GUEST
-        user.attributes["age"] = age
-        user.attributes["weight"] = weight
-        user.attributes["height"] = height
-        Log.i("User", user.toString())
+        user.attributes[GlobalConstants.AGE] = age
+        user.attributes[GlobalConstants.WEIGHT] = weight
+        user.attributes[GlobalConstants.HEIGHT] = height
+        currentUser = user
+    }
+    fun setProfile(age:Int, weight:Int, height:Int){
+        currentUser.attributes[GlobalConstants.AGE] = age
+        currentUser.attributes[GlobalConstants.WEIGHT] = weight
+        currentUser.attributes[GlobalConstants.HEIGHT] = height
     }
 
     // Logout a user
-    fun logout() {}
+    fun logout() {
+        currentUser = User()
+    }
 
-    // Handle authentication for different roles
-    fun authenticateUser() {}
+
 }

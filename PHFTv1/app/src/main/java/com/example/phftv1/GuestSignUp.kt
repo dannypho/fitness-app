@@ -29,9 +29,8 @@ class GuestSignUp : AppCompatActivity() {
         findViewById<Button>(R.id.signup_btn).setOnClickListener {
             val name = usernameEditText.text.toString()
             val age = ageEditText.text.toString().toInt()
-            val weight = weightEditText.text.toString()
-            val height = heightEditText.text.toString()
-
+            val weight = weightEditText.text.toString().toInt()
+            val height = heightEditText.text.toString().toInt()
             RegistrationController().addGuestUser(name, age, weight, height)
         }
 

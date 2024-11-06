@@ -46,7 +46,7 @@
             android:name=".PersonalTrainer"
             android:exported="false" />
         <activity
-            android:name=".signUp"
+            android:name=".SignUp"
             android:exported="false" />
         <activity
             android:name=".Dashboard"
