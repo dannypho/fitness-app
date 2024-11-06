@@ -32,6 +32,9 @@ class ProgressMonitoring : AppCompatActivity() {
         }
 
 
-
+        findViewById<Button>(R.id.share_button).setOnClickListener {
+            val intent = Intent(this, SocialFeatures::class.java)
+            startActivity(intent)
+        }
     }
 }

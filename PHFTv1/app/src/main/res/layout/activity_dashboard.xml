@@ -26,124 +26,118 @@
             android:id="@+id/welcome_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="                Welcome to PHFT"
+            android:text="Welcome to PHFT"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:gravity="center"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/profile_icon" />
 
-        <Button
-            android:id="@+id/btn_activity_categories"
-            android:layout_width="0dp"
+        <!-- Use GridLayout to structure buttons in a single column -->
+        <GridLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Activity Categories"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            app:layout_constraintTop_toBottomOf="@id/welcome_text"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginTop="16dp"
+            android:columnCount="1"
+            android:rowCount="10"
+            app:layout_constraintTop_toBottomOf="@id/welcome_text">
 
-        <Button
-            android:id="@+id/btn_goal_setting"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Goal Setting"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            app:layout_constraintTop_toBottomOf="@id/btn_activity_categories"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="8dp" />
+            <!-- Button with image and text -->
+            <Button
+                android:id="@+id/btn_activity_categories"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_columnWeight="1"
+                android:text="Activity Categories"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
-        <Button
-            android:id="@+id/btn_tracking"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Tracking"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            app:layout_constraintTop_toBottomOf="@id/btn_goal_setting"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="8dp" />
+            <Button
+                android:id="@+id/btn_goal_setting"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_columnWeight="1"
+                android:text="Goal Setting"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
-        <Button
-            android:id="@+id/btn_progress_monitoring"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Progress Monitoring"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            app:layout_constraintTop_toBottomOf="@id/btn_tracking"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="8dp" />
+            <Button
+                android:id="@+id/btn_tracking"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_columnWeight="1"
+                android:text="Tracking"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
-        <Button
-            android:id="@+id/btn_exercise_plans"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Exercise Plans"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            app:layout_constraintTop_toBottomOf="@id/btn_progress_monitoring"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="8dp" />
+            <Button
+                android:id="@+id/btn_progress_monitoring"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_columnWeight="1"
+                android:text="Progress Monitoring"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
-        <Button
-            android:id="@+id/btn_trainer_reviews"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Trainer Reviews"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            app:layout_constraintTop_toBottomOf="@id/btn_exercise_plans"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="8dp" />
+            <Button
+                android:id="@+id/btn_exercise_plans"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_columnWeight="1"
+                android:text="Exercise Plans"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
-        <Button
-            android:id="@+id/btn_reward_center"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Reward Center"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            app:layout_constraintTop_toBottomOf="@id/btn_trainer_reviews"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="8dp" />
+            <Button
+                android:id="@+id/btn_trainer_reviews"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_columnWeight="1"
+                android:text="Trainer Reviews"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
-        <Button
-            android:id="@+id/btn_subscription"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Subscriptions"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            app:layout_constraintTop_toBottomOf="@id/btn_reward_center"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="8dp" />
+            <Button
+                android:id="@+id/btn_reward_center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_columnWeight="1"
+                android:text="Reward Center"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
-        <Button
-            android:id="@+id/btn_settings"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Settings (not implemented)"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            app:layout_constraintTop_toBottomOf="@id/btn_subscription"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="8dp" />
+            <Button
+                android:id="@+id/btn_subscription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_columnWeight="1"
+                android:text="Subscriptions"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+            <Button
+                android:id="@+id/purchase_workout_plans"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_columnWeight="1"
+                android:text="Purchase Personalized Workout Plans"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
-        <Button
-            android:id="@+id/btn_back"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="167dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:text="BACK"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_settings" />
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_columnWeight="1"
+                android:text="Logout"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+
+
+        </GridLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

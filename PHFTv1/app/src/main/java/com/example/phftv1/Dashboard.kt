@@ -67,5 +67,14 @@ class Dashboard : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+        findViewById<Button>(R.id.purchase_workout_plans).setOnClickListener {
+            val intent = Intent(this, PaymentIntegration::class.java)
+            startActivity(intent)
+        }
+
+
+
+
     }
 }

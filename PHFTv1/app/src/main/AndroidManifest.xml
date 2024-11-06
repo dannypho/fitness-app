@@ -13,6 +13,15 @@
         android:theme="@style/Theme.PHFTv1"
         tools:targetApi="31">
         <activity
+            android:name=".leaderboard"
+            android:exported="false" />
+        <activity
+            android:name=".SocialFeatures"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentIntegration"
+            android:exported="false" />
+        <activity
             android:name=".UserPersonalInformation"
             android:exported="false" />
         <activity
