@@ -17,6 +17,8 @@ class RegistrationController  {
         user.role = GlobalConstants.GENERAL
         dbHelper.addUser(user)
         dbHelper.addLoginInfo(userName,password,user.id)
+        SessionManager.loginUser(user)
+
 
     }
 

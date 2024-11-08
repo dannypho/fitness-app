@@ -51,6 +51,7 @@ open class DataBaseHelper(context: Context,
         val createLoginTable ="CREATE TABLE $LOGIN_TABLE(" +
                 "$COLUMN_USERNAME TEXT PRIMARY KEY, " +
                 "$COLUMN_PASSWORD TEXT NOT NULL, " +
+                "$COLUMN_USER_ID TEXT, " +
                 "FOREIGN KEY($COLUMN_USER_ID) REFERENCES $USER_TABLE($COLUMN_USER_ID))"
 
         db?.execSQL(createLoginTable)
@@ -61,6 +62,7 @@ open class DataBaseHelper(context: Context,
                 "$COLUMN_NAME TEXT, " +
                 "$COLUMN_POINTS INT, " +
                 "$COLUMN_LEVEL TEXT, " +
+                "$COLUMN_ROLE TEXT, " +
                 "$COLUMN_AGE TEXT, " +
                 "$COLUMN_WEIGHT TEXT, " +
                 "$COLUMN_HEIGHT TEXT)"
@@ -99,7 +101,7 @@ open class DataBaseHelper(context: Context,
 //        cv.put(COLUMN_AGE, user.age)
 //        cv.put(COLUMN_WEIGHT, user.weight)
 //        cv.put(COLUMN_HEIGHT, user.height)
-
+        Log.i("content values test:",cv.toString())
         val insert = db.insert(USER_TABLE, null, cv)
 
         return insert != -1L
@@ -114,6 +116,7 @@ open class DataBaseHelper(context: Context,
         cv.put(COLUMN_GOAL, goal)
 
         val insert = db.insert(GOALS_TABLE, null, cv)
+        db.close()
 
         return insert != -1L
     }
@@ -155,6 +158,7 @@ open class DataBaseHelper(context: Context,
             Log.e("DatabaseError", "Invalid query: ${e.message}")
             return false
         }
+        db.close()
         return dbPassword == password
     }
 
