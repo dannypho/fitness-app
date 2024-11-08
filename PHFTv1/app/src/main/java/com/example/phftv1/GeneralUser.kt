@@ -58,6 +58,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.Controller.RegistrationController
+import com.example.backend.DataBaseHelper
 
 import java.io.BufferedReader
 import java.io.File
@@ -90,9 +91,10 @@ class GeneralUser : AppCompatActivity() {
 
         // Login button listener
         loginBtn.setOnClickListener {
+            val dbHelper = DataBaseHelper(this)
             val username = usernameInput.text.toString().trim()
             val password = passwordInput.text.toString().trim()
-            RegistrationController().login(username, password)
+            RegistrationController().login(username, password, dbHelper )
         }
 
     }

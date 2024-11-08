@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.Controller.RegistrationController
 import com.example.Model.User
+import com.example.backend.DataBaseHelper
 
 class GuestSignUp : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

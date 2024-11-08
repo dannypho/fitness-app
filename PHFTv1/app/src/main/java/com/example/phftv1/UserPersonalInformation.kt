@@ -7,6 +7,7 @@ import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.Controller.RegistrationController
+import com.example.backend.DataBaseHelper
 
 class UserPersonalInformation : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,10 +24,11 @@ class UserPersonalInformation : AppCompatActivity() {
         val heightEditText = findViewById<EditText>(R.id.height_inputGeneral)
 
         findViewById<Button>(R.id.signup_btnGeneral).setOnClickListener {
+            val dbHelper = DataBaseHelper(this)
             val age = ageEditText.text.toString().toInt()
             val weight = weightEditText.text.toString().toInt()
             val height = heightEditText.text.toString().toInt()
-            RegistrationController().setProfile(age,weight,height)
+            RegistrationController().setProfile(age,weight,height,dbHelper)
         }
 
 

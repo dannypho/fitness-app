@@ -7,7 +7,11 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
+import com.example.Model.GlobalConstants
 import com.example.Model.User
+import com.example.backend.DataBaseHelper.Companion.COLUMN_PASSWORD
+import com.example.backend.DataBaseHelper.Companion.COLUMN_USERNAME
+import com.example.backend.DataBaseHelper.Companion.LOGIN_TABLE
 
 
 open class DataBaseHelper(context: Context,
@@ -46,8 +50,8 @@ open class DataBaseHelper(context: Context,
         // Create login information table
         val createLoginTable ="CREATE TABLE $LOGIN_TABLE(" +
                 "$COLUMN_USERNAME TEXT PRIMARY KEY, " +
-                "$COLUMN_NAME TEXT NOT NULL, " +
-                "$COLUMN_PASSWORD TEXT NOT NULL)"
+                "$COLUMN_PASSWORD TEXT NOT NULL, " +
+                "FOREIGN KEY($COLUMN_USER_ID) REFERENCES $USER_TABLE($COLUMN_USER_ID))"
 
         db?.execSQL(createLoginTable)
 
@@ -153,4 +157,102 @@ open class DataBaseHelper(context: Context,
         }
         return dbPassword == password
     }
+
+    fun getUserByUsername(userName: String): User {
+        val db = this.readableDatabase
+        var user: User = User()
+
+        try {
+            // Get the user ID using getUID method
+            val userId = getUID(userName)
+
+            // Query to get the full user details from USER_TABLE using userId
+            val userQuery = "SELECT * FROM $USER_TABLE WHERE $COLUMN_USER_ID = ?"
+            val userCursor = db.rawQuery(userQuery, arrayOf(userId))
+
+            // Populate the User object if data is found
+            if (userCursor.moveToFirst()) {
+                user = User(
+                    id = userCursor.getString(userCursor.getColumnIndexOrThrow(COLUMN_USER_ID)),
+                    name = userCursor.getString(userCursor.getColumnIndexOrThrow(COLUMN_NAME)),
+                    points = userCursor.getInt(userCursor.getColumnIndexOrThrow(COLUMN_POINTS)),
+                    level = userCursor.getString(userCursor.getColumnIndexOrThrow(COLUMN_LEVEL)),
+                    role = userCursor.getString(userCursor.getColumnIndexOrThrow(COLUMN_ROLE)),
+                    attributes = hashMapOf(
+                        GlobalConstants.AGE to userCursor.getInt(userCursor.getColumnIndexOrThrow(COLUMN_AGE)),
+                        GlobalConstants.WEIGHT to userCursor.getInt(userCursor.getColumnIndexOrThrow(COLUMN_WEIGHT)),
+                        GlobalConstants.HEIGHT to userCursor.getInt(userCursor.getColumnIndexOrThrow(COLUMN_HEIGHT))
+                    )
+                )
+            }
+
+            userCursor.close()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        } finally {
+            db.close()
+        }
+
+        return user // Return null if no user is found
+    }
+
+
+    fun getUID(userName: String): String {
+        val db = this.readableDatabase
+        var userId: String? = null
+
+        val query = "SELECT $COLUMN_USER_ID FROM $LOGIN_TABLE WHERE $COLUMN_USERNAME = ?"
+        val cursor = db.rawQuery(query, arrayOf(userName))
+
+        if (cursor.moveToFirst()) {
+            userId = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_USER_ID))
+        }
+
+        cursor.close()
+        db.close()
+
+        return userId ?: ""  // Return an empty string if userId is not found
+    }
+
+    fun updateUser(user: User): Boolean {
+        val db = this.writableDatabase
+        val cv = ContentValues()
+
+        // Populate the ContentValues with the updated user details
+        cv.put(COLUMN_NAME, user.name)
+        cv.put(COLUMN_POINTS, user.points)
+        cv.put(COLUMN_LEVEL, user.level)
+        cv.put(COLUMN_ROLE, user.role)
+        cv.put(COLUMN_AGE, user.attributes[GlobalConstants.AGE]?.toString())
+        cv.put(COLUMN_WEIGHT, user.attributes[GlobalConstants.WEIGHT]?.toString())
+        cv.put(COLUMN_HEIGHT, user.attributes[GlobalConstants.HEIGHT]?.toString())
+
+        // Update the row and check if the operation was successful
+        val rowsAffected = db.update(USER_TABLE, cv, "$COLUMN_USER_ID = ?", arrayOf(user.id))
+        db.close()
+
+        // Return true if at least one row was updated, otherwise false
+        return rowsAffected > 0
+    }
+
+    fun addLoginInfo(username: String, password: String, UID: String) {
+        val db = this.writableDatabase
+        val cv = ContentValues()
+
+        // Populate ContentValues with the login information
+        cv.put(COLUMN_USERNAME, username)
+        cv.put(COLUMN_PASSWORD, password)
+        cv.put(COLUMN_USER_ID, UID)
+
+        // Insert the login information into LOGIN_TABLE
+         db.insert(LOGIN_TABLE, null, cv)
+
+        // Close the database connection
+        db.close()
+
+    }
+
+
+
 }
+
