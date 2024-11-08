@@ -4,7 +4,9 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 import com.example.Model.User
 
 
@@ -133,8 +135,22 @@ open class DataBaseHelper(context: Context,
         return goals
     }
 
-    fun verifyLogin(username: String, password: String){
+    fun verifyLogin(username: String, password: String): Boolean {
+        val db = this.readableDatabase
+        var dbPassword: String? = null
 
+        try {
+            val cursor = db.rawQuery("SELECT $COLUMN_PASSWORD FROM $LOGIN_TABLE WHERE $COLUMN_USERNAME = ?", arrayOf(username))
+
+            // Get the dbPassword
+            if (cursor.moveToFirst()) {
+                dbPassword = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PASSWORD))
+            }
+            cursor.close()
+        } catch (e: SQLiteException) {
+            Log.e("DatabaseError", "Invalid query: ${e.message}")
+            return false
+        }
+        return dbPassword == password
     }
-
 }
