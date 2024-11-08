@@ -46,7 +46,7 @@ package com.example.phftv1
 //}
 //
 
-//
+
 //import android.content.Intent
 //import android.os.Bundle
 //import android.util.Log
@@ -97,7 +97,6 @@ package com.example.phftv1
 //
 //    }
 //}
-
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
