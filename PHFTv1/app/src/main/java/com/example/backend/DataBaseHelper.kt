@@ -14,40 +14,59 @@ open class DataBaseHelper(context: Context,
 ) : SQLiteOpenHelper(context, dbName, null, version) {
 
     companion object {
-        // Users table constants
-        const val USER_TABLE = "users"
-        const val COLUMN_USER_ID = "column_user_id"
-        const val COLUMN_NAME = "column_name"
-        const val COLUMN_PASSWORD = "column_password"
-        const val COLUMN_POINTS = "column_points"
-        const val COLUMN_LEVEL = "column_level"
-        const val COLUMN_ROLE = "column_role"
+        // Login information table constants
+        const val LOGIN_TABLE = "Login_Information"
+        const val COLUMN_USERNAME = "username"
+        const val COLUMN_PASSWORD = "password"
 
-        //Goals table constants
-        const val GOALS_TABLE = "goals"
-        const val COLUMN_GOAL_ID = "column_goal_id"
-        const val COLUMN_GOAL_TEXT = "column_goal_text"
-        const val COLUMN_USER_FK = "column_user_id"
+        // Users table constants
+        const val USER_TABLE = "Users"
+        const val COLUMN_USER_ID = "user_id"
+        const val COLUMN_NAME = "name"
+        const val COLUMN_POINTS = "points"
+        const val COLUMN_LEVEL = "level"
+        const val COLUMN_ROLE = "role"
+        const val COLUMN_AGE = "age"
+        const val COLUMN_WEIGHT = "weight"
+        const val COLUMN_HEIGHT = "height"
+
+        // Goals table constants
+        const val GOALS_TABLE = "Goals"
+        const val COLUMN_GOAL_ID = "goal_id"
+        const val COLUMN_GOAL = "goal"
     }
 
     // Create the users table with the given columns
     override fun onCreate(db: SQLiteDatabase?) {
-        // Users table constants
+        // Enable foreign keys
+        db?.execSQL("PRAGMA foreign_keys = ON")
+
+        // Create login information table
+        val createLoginTable ="CREATE TABLE $LOGIN_TABLE(" +
+                "$COLUMN_USERNAME TEXT PRIMARY KEY, " +
+                "$COLUMN_NAME TEXT NOT NULL, " +
+                "$COLUMN_PASSWORD TEXT NOT NULL)"
+
+        db?.execSQL(createLoginTable)
+
+        // Create user table
         val createUserTable = "CREATE TABLE $USER_TABLE (" +
                 "$COLUMN_USER_ID TEXT PRIMARY KEY, " +
                 "$COLUMN_NAME TEXT, " +
-                "$COLUMN_PASSWORD TEXT, " +
                 "$COLUMN_POINTS INT, " +
                 "$COLUMN_LEVEL TEXT, " +
-                "$COLUMN_ROLE TEXT)"
+                "$COLUMN_AGE TEXT, " +
+                "$COLUMN_WEIGHT TEXT, " +
+                "$COLUMN_HEIGHT TEXT)"
 
         db?.execSQL(createUserTable)
 
-        // Goals table constants
+        // Create goals table
         val createGoalsTable = "CREATE TABLE $GOALS_TABLE (" +
                 "$COLUMN_GOAL_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "$COLUMN_GOAL_TEXT TEXT, " +
-                "FOREIGN KEY($COLUMN_USER_FK) REFERENCES $USER_TABLE($COLUMN_USER_ID))"
+                "$COLUMN_USER_ID TEXT, " +
+                "$COLUMN_GOAL TEXT, " +
+                "FOREIGN KEY($COLUMN_USER_ID) REFERENCES $USER_TABLE($COLUMN_USER_ID))"
 
         db?.execSQL(createGoalsTable)
     }
@@ -56,6 +75,7 @@ open class DataBaseHelper(context: Context,
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db?.execSQL("DROP TABLE $USER_TABLE")
         db?.execSQL("DROP TABLE $GOALS_TABLE")
+        db?.execSQL("DROP TABLE $LOGIN_TABLE")
         onCreate(db)
     }
 
@@ -67,10 +87,12 @@ open class DataBaseHelper(context: Context,
 
         cv.put(COLUMN_USER_ID, user.id)
         cv.put(COLUMN_NAME, user.name)
-        // cv.put(COLUMN_PASSWORD, user.)
-        cv.put(COLUMN_POINTS, user.points)
         cv.put(COLUMN_LEVEL, user.level)
+        cv.put(COLUMN_POINTS, user.points)
         cv.put(COLUMN_ROLE, user.role)
+//        cv.put(COLUMN_AGE, user.age)
+//        cv.put(COLUMN_WEIGHT, user.weight)
+//        cv.put(COLUMN_HEIGHT, user.height)
 
         val insert = db.insert(USER_TABLE, null, cv)
 
@@ -82,8 +104,8 @@ open class DataBaseHelper(context: Context,
         val db = this.writableDatabase
         val cv = ContentValues()
 
-        cv.put(COLUMN_USER_FK, userID)
-        cv.put(COLUMN_GOAL_TEXT, goal)
+        cv.put(COLUMN_USER_ID, userID)
+        cv.put(COLUMN_GOAL, goal)
 
         val insert = db.insert(GOALS_TABLE, null, cv)
 
@@ -92,15 +114,16 @@ open class DataBaseHelper(context: Context,
 
     // Read the goals table and return a list of the goals for a specific userID
     fun getGoalsForUser(userId: String): List<String> {
-        val db = this.readableDatabase
-        val query = "SELECT $COLUMN_GOAL_TEXT FROM $GOALS_TABLE WHERE $COLUMN_USER_FK = ?"
-        val cursor: Cursor = db.rawQuery(query, arrayOf(userId))
         val goals = mutableListOf<String>()
+        val db = this.readableDatabase
+
+        // Query to get all goals from a user_id
+        val cursor = db.rawQuery("SELECT $COLUMN_GOAL FROM $GOALS_TABLE WHERE $COLUMN_USER_ID = ?", arrayOf(userId))
 
         // Loop through the cursor to extract data
         if (cursor.moveToFirst()) {
             do {
-                val goalText = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_GOAL_TEXT))
+                val goalText = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_GOAL))
                 // Store goal text in the goals list
                 goals.add(goalText)
             } while (cursor.moveToNext())
@@ -108,6 +131,10 @@ open class DataBaseHelper(context: Context,
         cursor.close()
 
         return goals
+    }
+
+    fun verifyLogin(username: String, password: String){
+
     }
 
 }
