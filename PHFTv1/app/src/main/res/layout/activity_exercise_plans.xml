@@ -96,5 +96,17 @@
             android:text="Create Custom Plan"
             android:backgroundTint="@color/black"
             android:textColor="@color/white" />
+
+
+        <!-- ImageButton at the bottom -->
+        <ImageButton
+            android:id="@+id/image_button_bottom_exercise"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="18dp"
+            android:src="@drawable/fitness_ad" />
     </LinearLayout>
+
 </RelativeLayout>

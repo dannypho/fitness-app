@@ -15,12 +15,24 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <!-- Logo -->
+        <!-- Profile Photo Display -->
         <ImageView
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:src="@drawable/main_logo"
-            android:contentDescription="App Logo" />
+            android:id="@+id/profile_photo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_profile"
+            android:contentDescription="Profile Photo"
+            android:background="@drawable/rounded_corner_username" />
+
+        <!-- Upload Photo Button -->
+        <Button
+            android:id="@+id/upload_photo_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Upload Profile Photo"
+            android:textColor="@color/white" />
 
         <!-- Full Name Field -->
         <EditText
@@ -36,7 +48,49 @@
             android:textColorHint="@color/white"
             android:textSize="18sp" />
 
-        <!-- Email Field -->
+        <!-- Age Field -->
+        <EditText
+            android:id="@+id/age_inputGeneral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_corner_username"
+            android:hint="Age"
+            android:inputType="number"
+            android:padding="7dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp" />
+
+        <!-- Weight Field -->
+        <EditText
+            android:id="@+id/weight_inputGeneral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_corner_username"
+            android:hint="Weight (LB)"
+            android:inputType="numberDecimal"
+            android:padding="7dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp" />
+
+        <!-- Height Field -->
+        <EditText
+            android:id="@+id/height_inputGeneral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_corner_username"
+            android:hint="Height (cm)"
+            android:inputType="numberDecimal"
+            android:padding="7dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp" />
+
+        <!-- Username Field -->
         <EditText
             android:id="@+id/UserName_input"
             android:layout_width="match_parent"
@@ -85,17 +139,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:backgroundTint="@color/black"
-            android:padding="10dp"
+            android:padding="1dp"
             android:text="Sign Up"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
-        <!-- Optional Text for Navigation Back to Login -->
+        <!-- Back to Login Button -->
         <Button
             android:id="@+id/onBackToLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="2dp"
             android:backgroundTint="@color/black"
             android:padding="10dp"
             android:text="Already have an account? Log in"

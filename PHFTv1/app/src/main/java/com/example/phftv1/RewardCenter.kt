@@ -46,7 +46,9 @@ class RewardCenter : AppCompatActivity() {
 
         // Leaderboard button
         findViewById<Button>(R.id.leaderboard_button).setOnClickListener {
-            viewLeaderboard()
+//            viewLeaderboard()
+            val intent = Intent(this, leaderboard::class.java)
+            startActivity(intent)
         }
 
         // Browse Reward Products button
@@ -106,3 +108,6 @@ class RewardCenter : AppCompatActivity() {
 
     }
 }
+
+
+
