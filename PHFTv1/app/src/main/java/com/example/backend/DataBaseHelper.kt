@@ -102,8 +102,9 @@ open class DataBaseHelper(context: Context,
 //        cv.put(COLUMN_WEIGHT, user.weight)
 //        cv.put(COLUMN_HEIGHT, user.height)
         Log.i("content values test:",cv.toString())
-        val insert = db.insert(USER_TABLE, null, cv)
 
+        val insert = db.insert(USER_TABLE, null, cv)
+        Log.d("DatabaseOperation", "Insert result for addUser: $insert")
         return insert != -1L
     }
 

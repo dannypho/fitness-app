@@ -13,13 +13,12 @@ class RegistrationController  {
    public fun registerUser(userName: String, password:String, name:String,dbHelper:DataBaseHelper ) {
         val user:User = User()
         user.id = UUID.randomUUID().toString()
+        Log.i("userid", user.id)
         user.name = name
         user.role = GlobalConstants.GENERAL
         dbHelper.addUser(user)
         dbHelper.addLoginInfo(userName,password,user.id)
         SessionManager.loginUser(user)
-
-
     }
 
     // Login a user
@@ -48,6 +47,7 @@ class RegistrationController  {
         SessionManager.currentUser.attributes[GlobalConstants.WEIGHT] = weight
         SessionManager.currentUser.attributes[GlobalConstants.HEIGHT] = height
         dbHelper.updateUser(SessionManager.currentUser)
+        Log.i("session user", SessionManager.currentUser.toString())
     }
 
     // Logout a user

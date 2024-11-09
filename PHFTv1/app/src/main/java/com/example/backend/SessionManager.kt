@@ -7,7 +7,12 @@ object SessionManager {
         private set
 
     fun loginUser(user: User) {
-        currentUser = user
+        currentUser.id = user.id
+        currentUser.name = user.name
+        currentUser.points = user.points
+        currentUser.level = user.level
+        currentUser.role = user.role
+        currentUser.attributes = user.attributes
     }
 
     fun logout() {
