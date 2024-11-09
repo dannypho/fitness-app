@@ -51,6 +51,7 @@ import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.Controller.RegistrationController
+import com.example.backend.DataBaseHelper
 
 class UserPersonalInformation : AppCompatActivity() {
     private lateinit var profilePhoto: ImageView
@@ -66,9 +67,17 @@ class UserPersonalInformation : AppCompatActivity() {
         val weightEditText = findViewById<EditText>(R.id.weight_inputGeneral)
         val heightEditText = findViewById<EditText>(R.id.height_inputGeneral)
 
+
         // Set up the profile photo upload button
         findViewById<Button>(R.id.upload_photo_btn).setOnClickListener {
             openGallery()
+
+        findViewById<Button>(R.id.signup_btnGeneral).setOnClickListener {
+            val dbHelper = DataBaseHelper(this)
+            val age = ageEditText.text.toString().toInt()
+            val weight = weightEditText.text.toString().toInt()
+            val height = heightEditText.text.toString().toInt()
+            RegistrationController().setProfile(age,weight,height,dbHelper)
         }
 
         // Sign-up button functionality
