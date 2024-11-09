@@ -165,7 +165,11 @@ class GeneralUser : AppCompatActivity() {
             }
 
             Log.i("TEST Credentials", "Username: $username and Password: $password")
-            RegistrationController().login(username, password, dbHelper )
+           val isLoggedIn = RegistrationController().login(username, password, dbHelper)
+            
+            if (!isLoggedIn){
+                // print to user that the password or username is incorrect
+            }
 
         }
     }

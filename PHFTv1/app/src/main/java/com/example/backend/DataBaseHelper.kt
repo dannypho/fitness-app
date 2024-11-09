@@ -2,16 +2,12 @@ package com.example.backend
 
 import android.content.ContentValues
 import android.content.Context
-import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
-import com.example.Model.GlobalConstants
 import com.example.Model.User
-import com.example.backend.DataBaseHelper.Companion.COLUMN_PASSWORD
-import com.example.backend.DataBaseHelper.Companion.COLUMN_USERNAME
-import com.example.backend.DataBaseHelper.Companion.LOGIN_TABLE
+
 
 
 open class DataBaseHelper(context: Context,

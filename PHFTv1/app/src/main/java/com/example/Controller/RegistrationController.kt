@@ -23,14 +23,17 @@ class RegistrationController  {
     }
 
     // Login a user
-    fun login(userName: String, password:String, dbHelper:DataBaseHelper) {
+    fun login(userName: String, password:String, dbHelper:DataBaseHelper): Boolean {
         var user:User = User()
+        var isLoggedIn = false
         if (dbHelper.getUID(userName)!= ""){
             if(dbHelper.verifyLogin(userName,password)){
                 user = dbHelper.getUserByUsername(userName)
                 SessionManager.loginUser(user)
+                isLoggedIn = true
             }
         }
+        return isLoggedIn
     }
 
     fun addGuestUser(name:String, age:Int, weight:Int, height:Int){
