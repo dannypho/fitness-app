@@ -5,13 +5,15 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat.startActivityForResult
 import com.example.Controller.RegistrationController
+import com.example.Model.ROLES
+import com.example.Model.User
 import com.example.backend.DataBaseHelper
 
 
@@ -29,16 +31,6 @@ class SignUp : AppCompatActivity() {
         val usernameEditText = findViewById<EditText>(R.id.UserName_input)
         val  nameEditText = findViewById<EditText>(R.id.fullname_input)
         val passwordEditText = findViewById<EditText>(R.id.password_input)
-
-
-
-
-        findViewById<Button>(R.id.signup_btn).setOnClickListener {
-            val name = nameEditText.text.toString()
-            val username = usernameEditText.text.toString()
-            val password = passwordEditText.text.toString()
-             RegistrationController().registerUser(username,password,name)
-        }
         profilePhoto = findViewById(R.id.profile_photo)
         val ageEditText = findViewById<EditText>(R.id.age_inputGeneral)
         val weightEditText = findViewById<EditText>(R.id.weight_inputGeneral)
@@ -55,29 +47,24 @@ class SignUp : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
         // Sign-up button functionality
         findViewById<Button>(R.id.signup_btn).setOnClickListener {
-
-            val age = ageEditText.text.toString().toIntOrNull() ?: 0
-            val weight = weightEditText.text.toString().toIntOrNull() ?: 0
-            val height = heightEditText.text.toString().toIntOrNull() ?: 0
-            RegistrationController().setProfile(age, weight, height)
-
             val dbHelper = DataBaseHelper(this)
-            val name = nameEditText.text.toString()
+
+            //save user sign in info
             val username = usernameEditText.text.toString()
             val password = passwordEditText.text.toString()
-            RegistrationController().registerUser(username,password,name,dbHelper)
-            val intent = Intent(this, UserPersonalInformation::class.java)
-            startActivity(intent)
+            val user:User = RegistrationController().registerUserInfo(username,password,dbHelper)
 
+            //save user
+            user.name = nameEditText.text.toString()
+            user.role = ROLES.GENERAL
+            user.age = ageEditText.text.toString().toIntOrNull() ?: 0
+            user.weight = weightEditText.text.toString().toIntOrNull() ?: 0
+            user.height = heightEditText.text.toString().toIntOrNull() ?: 0
+            RegistrationController().registerUser(user, dbHelper)
         }
-
-//        findViewById<Button>(R.id.signup_btn).setOnClickListener {
-//            val intent = Intent(this, UserPersonalInformation::class.java)
-//            startActivity(intent)
-//        }
-
     }
 
 

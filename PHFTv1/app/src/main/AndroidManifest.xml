@@ -22,9 +22,6 @@
             android:name=".PaymentIntegration"
             android:exported="false" />
         <activity
-            android:name=".UserPersonalInformation"
-            android:exported="false" />
-        <activity
             android:name=".RewardCenter"
             android:exported="false" />
         <activity

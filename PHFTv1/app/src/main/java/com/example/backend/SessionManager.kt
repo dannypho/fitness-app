@@ -12,7 +12,9 @@ object SessionManager {
         currentUser.points = user.points
         currentUser.level = user.level
         currentUser.role = user.role
-        currentUser.attributes = user.attributes
+        currentUser.age = user.age
+        currentUser.weight = user.weight
+        currentUser.height = user.height
     }
 
     fun logout() {

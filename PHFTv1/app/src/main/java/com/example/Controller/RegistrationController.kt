@@ -1,23 +1,24 @@
 package com.example.Controller
 
 import android.util.Log
-import com.example.Model.GlobalConstants
+import com.example.Model.ROLES
 import com.example.Model.User
 import com.example.backend.DataBaseHelper
 import com.example.backend.SessionManager
 import java.util.UUID
 
 class RegistrationController  {
-    final var currentUser: User = User()
+
+
     // Register a new user
-   public fun registerUser(userName: String, password:String, name:String,dbHelper:DataBaseHelper ) {
+   public fun registerUserInfo(userName: String, password:String,dbHelper:DataBaseHelper ): User  {
         val user:User = User()
         user.id = UUID.randomUUID().toString()
-        Log.i("userid", user.id)
-        user.name = name
-        user.role = GlobalConstants.GENERAL
-        dbHelper.addUser(user)
         dbHelper.addLoginInfo(userName,password,user.id)
+        return user
+    }
+    public fun registerUser(user: User,dbHelper:DataBaseHelper){
+        dbHelper.addUser(user)
         SessionManager.loginUser(user)
     }
 
@@ -36,19 +37,13 @@ class RegistrationController  {
         val user: User = User()
         user.id = UUID.randomUUID().toString()
         user.name = name
-        user.role = GlobalConstants.GUEST
-        user.attributes[GlobalConstants.AGE] = age
-        user.attributes[GlobalConstants.WEIGHT] = weight
-        user.attributes[GlobalConstants.HEIGHT] = height
+        user.role = ROLES.GUEST
+        user.age = age
+        user.weight = weight
+        user.height = height
         SessionManager.loginUser(user)
     }
-    fun setProfile(age:Int, weight:Int, height:Int, dbHelper:DataBaseHelper){
-        SessionManager.currentUser.attributes[GlobalConstants.AGE] = age
-        SessionManager.currentUser.attributes[GlobalConstants.WEIGHT] = weight
-        SessionManager.currentUser.attributes[GlobalConstants.HEIGHT] = height
-        dbHelper.updateUser(SessionManager.currentUser)
-        Log.i("session user", SessionManager.currentUser.toString())
-    }
+
 
     // Logout a user
     fun logout() {

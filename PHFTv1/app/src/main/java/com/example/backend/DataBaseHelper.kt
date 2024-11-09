@@ -63,9 +63,9 @@ open class DataBaseHelper(context: Context,
                 "$COLUMN_POINTS INT, " +
                 "$COLUMN_LEVEL TEXT, " +
                 "$COLUMN_ROLE TEXT, " +
-                "$COLUMN_AGE TEXT, " +
-                "$COLUMN_WEIGHT TEXT, " +
-                "$COLUMN_HEIGHT TEXT)"
+                "$COLUMN_AGE INT, " +
+                "$COLUMN_WEIGHT INT, " +
+                "$COLUMN_HEIGHT INT)"
 
         db?.execSQL(createUserTable)
 
@@ -98,9 +98,9 @@ open class DataBaseHelper(context: Context,
         cv.put(COLUMN_LEVEL, user.level)
         cv.put(COLUMN_POINTS, user.points)
         cv.put(COLUMN_ROLE, user.role)
-//        cv.put(COLUMN_AGE, user.age)
-//        cv.put(COLUMN_WEIGHT, user.weight)
-//        cv.put(COLUMN_HEIGHT, user.height)
+        cv.put(COLUMN_AGE, user.age)
+        cv.put(COLUMN_WEIGHT, user.weight)
+        cv.put(COLUMN_HEIGHT, user.height)
         Log.i("content values test:",cv.toString())
 
         val insert = db.insert(USER_TABLE, null, cv)
@@ -183,11 +183,9 @@ open class DataBaseHelper(context: Context,
                     points = userCursor.getInt(userCursor.getColumnIndexOrThrow(COLUMN_POINTS)),
                     level = userCursor.getString(userCursor.getColumnIndexOrThrow(COLUMN_LEVEL)),
                     role = userCursor.getString(userCursor.getColumnIndexOrThrow(COLUMN_ROLE)),
-                    attributes = hashMapOf(
-                        GlobalConstants.AGE to userCursor.getInt(userCursor.getColumnIndexOrThrow(COLUMN_AGE)),
-                        GlobalConstants.WEIGHT to userCursor.getInt(userCursor.getColumnIndexOrThrow(COLUMN_WEIGHT)),
-                        GlobalConstants.HEIGHT to userCursor.getInt(userCursor.getColumnIndexOrThrow(COLUMN_HEIGHT))
-                    )
+                    age = userCursor.getInt(userCursor.getColumnIndexOrThrow(COLUMN_AGE)),
+                    weight = userCursor.getInt(userCursor.getColumnIndexOrThrow(COLUMN_WEIGHT)),
+                    height = userCursor.getInt(userCursor.getColumnIndexOrThrow(COLUMN_HEIGHT)),
                 )
             }
 
@@ -228,9 +226,9 @@ open class DataBaseHelper(context: Context,
         cv.put(COLUMN_POINTS, user.points)
         cv.put(COLUMN_LEVEL, user.level)
         cv.put(COLUMN_ROLE, user.role)
-        cv.put(COLUMN_AGE, user.attributes[GlobalConstants.AGE]?.toString())
-        cv.put(COLUMN_WEIGHT, user.attributes[GlobalConstants.WEIGHT]?.toString())
-        cv.put(COLUMN_HEIGHT, user.attributes[GlobalConstants.HEIGHT]?.toString())
+        cv.put(COLUMN_AGE, user.age)
+        cv.put(COLUMN_WEIGHT, user.weight)
+        cv.put(COLUMN_HEIGHT, user.height)
 
         // Update the row and check if the operation was successful
         val rowsAffected = db.update(USER_TABLE, cv, "$COLUMN_USER_ID = ?", arrayOf(user.id))
