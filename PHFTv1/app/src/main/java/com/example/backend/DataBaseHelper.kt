@@ -2,12 +2,13 @@ package com.example.backend
 
 import android.content.ContentValues
 import android.content.Context
+import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import com.example.Model.User
-
+import com.example.phftv1.Dashboard
 
 
 open class DataBaseHelper(context: Context,
@@ -98,12 +99,10 @@ open class DataBaseHelper(context: Context,
         cv.put(COLUMN_WEIGHT, user.weight)
         cv.put(COLUMN_HEIGHT, user.height)
         Log.i("content values test:",cv.toString())
-
         val insert = db.insert(USER_TABLE, null, cv)
         Log.d("DatabaseOperation", "Insert result for addUser: $insert")
         return insert != -1L
     }
-
     // Add a goal to the goals table
     fun addGoal(userID: String, goal: String): Boolean {
         val db = this.writableDatabase

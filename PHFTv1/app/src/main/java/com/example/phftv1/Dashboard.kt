@@ -3,10 +3,12 @@ package com.example.phftv1
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.backend.DataBaseHelper
 
 class Dashboard : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -72,8 +74,6 @@ class Dashboard : AppCompatActivity() {
             val intent = Intent(this, PaymentIntegration::class.java)
             startActivity(intent)
         }
-
-
 
 
     }

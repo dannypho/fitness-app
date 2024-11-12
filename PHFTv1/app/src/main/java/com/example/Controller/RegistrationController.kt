@@ -45,6 +45,8 @@ class RegistrationController  {
         user.weight = weight
         user.height = height
         SessionManager.loginUser(user)
+        Log.i("guest user",user.toString())
+
     }
 
 

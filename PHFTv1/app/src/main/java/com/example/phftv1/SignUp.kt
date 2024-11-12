@@ -9,6 +9,7 @@ import android.provider.MediaStore
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.Controller.RegistrationController
@@ -48,6 +49,7 @@ class SignUp : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         // Sign-up button functionality
         findViewById<Button>(R.id.signup_btn).setOnClickListener {
             val dbHelper = DataBaseHelper(this)
@@ -64,6 +66,11 @@ class SignUp : AppCompatActivity() {
             user.weight = weightEditText.text.toString().toIntOrNull() ?: 0
             user.height = heightEditText.text.toString().toIntOrNull() ?: 0
             RegistrationController().registerUser(user, dbHelper)
+
+            val intent = Intent(this, GeneralUser::class.java)
+            startActivity(intent)
+            Toast.makeText(this, "Login Using New Account", Toast.LENGTH_SHORT).show()
+
         }
     }
 

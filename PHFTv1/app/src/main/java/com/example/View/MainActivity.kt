@@ -36,5 +36,8 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, PersonalTrainer::class.java)
             startActivity(intent)
         }
+
+
+
     }
 }
