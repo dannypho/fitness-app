@@ -121,4 +121,20 @@
             android:textColor="@color/white" />
     </LinearLayout>
 
-</RelativeLayout>
+    <!-- Ad Layout at the Bottom -->
+    <LinearLayout
+        android:id="@+id/ad_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+         android:visibility="visible">
+
+    <!-- Add Ad components like ImageView, TextView, or AdView here -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/fitness_ad" />
+</LinearLayout>
+
+    </RelativeLayout>

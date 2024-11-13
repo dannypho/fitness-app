@@ -113,13 +113,13 @@
     </LinearLayout>
 
     <!-- ImageButton at the bottom -->
-    <ImageButton
-        android:id="@+id/image_button_bottom_CAT"
-        android:layout_width="198dp"
-        android:layout_height="53dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="28dp"
-        android:src="@drawable/ad_panel_lexus" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/image_button_bottom_CAT"-->
+<!--        android:layout_width="198dp"-->
+<!--        android:layout_height="53dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginBottom="28dp"-->
+<!--        android:src="@drawable/ad_panel_lexus" />-->
 
 </RelativeLayout>
