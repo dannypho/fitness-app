@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.phftv1"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.phftv1"
@@ -26,6 +26,12 @@ android {
             )
         }
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.3"
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -36,6 +42,15 @@ android {
 }
 
 dependencies {
+
+        implementation("androidx.core:core-ktx:1.7.0")
+        implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
+        implementation("androidx.activity:activity-compose:1.3.1")
+        implementation("androidx.compose.ui:ui:1.8.0-alpha06") // Adjust version if needed
+        implementation("androidx.compose.ui:ui-tooling-preview:1.8.0-alpha06")
+        implementation("androidx.compose.material:material:1.1.1")
+
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

@@ -33,6 +33,8 @@ class GuestSignUp : AppCompatActivity() {
             val weight = weightEditText.text.toString().toInt()
             val height = heightEditText.text.toString().toInt()
             RegistrationController().addGuestUser(name, age, weight, height)
+            val intent = Intent(this, GuestDashboard::class.java)
+            startActivity(intent)
         }
 
 

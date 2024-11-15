@@ -58,6 +58,13 @@
             android:name=".Dashboard"
             android:exported="false" />
         <activity
+            android:name=".GuestDashboard"
+            android:exported="false" />
+
+        <activity
+            android:name=".PersonalTrainerDashboard"
+            android:exported="false" />
+        <activity
             android:name=".GuestUser"
             android:exported="false" />
         <activity

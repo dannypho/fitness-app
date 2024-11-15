@@ -2,30 +2,17 @@ package com.example.phftv1
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.Model.ROLES
-import com.example.backend.DataBaseHelper
 import com.example.backend.SessionManager
 
-class Dashboard : AppCompatActivity() {
+class GuestDashboard : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_dashboard)
-
-        if (SessionManager.currentUser.role == ROLES.GUEST){
-            val intent = Intent(this, GuestDashboard::class.java)
-            startActivity(intent)
-        }
-        if (SessionManager.currentUser.role == ROLES.TRAINER){
-            val intent = Intent(this, PersonalTrainerDashboard::class.java)
-            startActivity(intent)
-        }
+        setContentView(R.layout.activity_guest_dashboard)
 
         findViewById<Button>(R.id.btn_back).setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -60,31 +47,11 @@ class Dashboard : AppCompatActivity() {
         }
 
 
-        findViewById<Button>(R.id.btn_trainer_reviews).setOnClickListener {
-            val intent = Intent(this, ReviewTrainer::class.java)
-            startActivity(intent)
-        }
-
-
-
-        findViewById<Button>(R.id.btn_subscription).setOnClickListener {
-            val intent = Intent(this, Subscription::class.java)
-            startActivity(intent)
-        }
-
-
-
-        findViewById<Button>(R.id.btn_reward_center).setOnClickListener {
-            val intent = Intent(this, RewardCenter::class.java)
-            startActivity(intent)
-        }
-
-
         findViewById<Button>(R.id.purchase_workout_plans).setOnClickListener {
             val intent = Intent(this, PaymentIntegration::class.java)
             startActivity(intent)
         }
 
-
     }
+
 }
