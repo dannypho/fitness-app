@@ -25,6 +25,8 @@
         android:layout_marginTop="60dp"
         android:layout_centerHorizontal="true" />
 
+
+
     <LinearLayout
         android:id="@+id/activity_buttons_layout"
         android:layout_width="match_parent"
@@ -35,6 +37,8 @@
         android:padding="16dp">
 
         <!-- Activity Buttons -->
+
+
         <Button
             android:id="@+id/running_progress_button"
             android:layout_width="match_parent"
