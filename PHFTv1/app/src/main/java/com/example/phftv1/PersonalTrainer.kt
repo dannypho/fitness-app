@@ -23,18 +23,18 @@ class PersonalTrainer : AppCompatActivity() {
 //        }
 
 
-        findViewById<Button>(R.id.dash_button).setOnClickListener {
-            val intent = Intent(this, Dashboard::class.java)
-            startActivity(intent)
-        }
-        findViewById<Button>(R.id.progress_button).setOnClickListener {
-            val intent = Intent(this, ProgressMonitoring::class.java)
-            startActivity(intent)
-        }
-        findViewById<Button>(R.id.share_button).setOnClickListener {
-            val intent = Intent(this, SocialFeatures::class.java)
-            startActivity(intent)
-        }
+//        findViewById<Button>(R.id.dash_button).setOnClickListener {
+//            val intent = Intent(this, Dashboard::class.java)
+//            startActivity(intent)
+//        }
+//        findViewById<Button>(R.id.progress_button).setOnClickListener {
+//            val intent = Intent(this, ProgressMonitoring::class.java)
+//            startActivity(intent)
+//        }
+//        findViewById<Button>(R.id.share_button).setOnClickListener {
+//            val intent = Intent(this, SocialFeatures::class.java)
+//            startActivity(intent)
+//        }
 
         findViewById<Button>(R.id.back_btn).setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)

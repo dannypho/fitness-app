@@ -57,8 +57,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+//        findViewById<Button>(R.id.btnPersonalTrainer).setOnClickListener {
+//            val intent = Intent(this, PersonalTrainer::class.java)
+//            startActivity(intent)
+//        }
         findViewById<Button>(R.id.btnPersonalTrainer).setOnClickListener {
-            val intent = Intent(this, PersonalTrainer::class.java)
+            val intent = Intent(this, PersonalTrainerDashboard::class.java)
             startActivity(intent)
         }
 
