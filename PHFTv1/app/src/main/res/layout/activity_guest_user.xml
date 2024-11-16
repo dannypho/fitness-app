@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#fce8e8">
+    android:background="#1d1e22">
 
     <TextView
         android:id="@+id/guestWelcomeTitle"

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="#1d1e22">
 
     <!--    android:background="#fce8e8"-->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,12 +27,13 @@
             android:id="@+id/welcome_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Welcome to PHFT"
+            android:text="Welcome to FitSync"
             android:textSize="24sp"
             android:textStyle="bold"
             android:gravity="center"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
+            android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/profile_icon" />
@@ -54,6 +55,8 @@
                 android:layout_margin="4dp"
                 android:layout_columnWeight="1"
                 android:text="Activity Categories"
+                android:backgroundTint="#89FC10"
+                android:textColor="#000000"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
             <Button
@@ -63,6 +66,8 @@
                 android:layout_margin="4dp"
                 android:layout_columnWeight="1"
                 android:text="Goal Setting"
+                android:backgroundTint="#89FC10"
+                android:textColor="#000000"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
             <Button
@@ -72,6 +77,8 @@
                 android:layout_margin="4dp"
                 android:layout_columnWeight="1"
                 android:text="Tracking"
+                android:backgroundTint="#89FC10"
+                android:textColor="#000000"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
             <Button
@@ -81,6 +88,8 @@
                 android:layout_margin="4dp"
                 android:layout_columnWeight="1"
                 android:text="Progress Monitoring"
+                android:backgroundTint="#89FC10"
+                android:textColor="#000000"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
             <Button
@@ -90,6 +99,8 @@
                 android:layout_margin="4dp"
                 android:layout_columnWeight="1"
                 android:text="Exercise Plans"
+                android:backgroundTint="#89FC10"
+                android:textColor="#000000"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
             <Button
@@ -99,6 +110,8 @@
                 android:layout_margin="4dp"
                 android:layout_columnWeight="1"
                 android:text="Trainer Reviews"
+                android:backgroundTint="#89FC10"
+                android:textColor="#000000"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
             <Button
@@ -108,6 +121,8 @@
                 android:layout_margin="4dp"
                 android:layout_columnWeight="1"
                 android:text="Reward Center"
+                android:backgroundTint="#89FC10"
+                android:textColor="#000000"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
             <Button
@@ -117,6 +132,8 @@
                 android:layout_margin="4dp"
                 android:layout_columnWeight="1"
                 android:text="Subscriptions"
+                android:backgroundTint="#89FC10"
+                android:textColor="#000000"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
             <Button
                 android:id="@+id/purchase_workout_plans"
@@ -125,6 +142,8 @@
                 android:layout_margin="4dp"
                 android:layout_columnWeight="1"
                 android:text="Purchase Personalized Workout Plans"
+                android:backgroundTint="#89FC10"
+                android:textColor="#000000"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
             <Button
@@ -134,8 +153,9 @@
                 android:layout_margin="4dp"
                 android:layout_columnWeight="1"
                 android:text="Logout"
+                android:backgroundTint="#89FC10"
+                android:textColor="#000000"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
-
 
 
         </GridLayout>

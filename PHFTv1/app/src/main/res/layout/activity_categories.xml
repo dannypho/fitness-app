@@ -110,6 +110,46 @@
             android:backgroundTint="@color/black"
             android:textColor="@color/white" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="200dp"
+            android:gravity="center">
+
+            <!-- Dash Button -->
+            <Button
+                android:id="@+id/dash_button"
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dashboard"
+                android:textColor="@android:color/white"
+                android:layout_marginEnd="5dp"
+                android:backgroundTint="@android:color/black" />
+
+            <!-- Progress Button -->
+            <Button
+                android:id="@+id/progress_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Progress"
+                android:textColor="@android:color/white"
+                android:layout_marginEnd="5dp"
+                android:backgroundTint="@android:color/black" />
+
+            <!-- Share Button -->
+            <Button
+                android:id="@+id/share_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/black"
+                android:text="Share"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
     </LinearLayout>
 
     <!-- ImageButton at the bottom -->

@@ -9,113 +9,107 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Back Button -->
-        <Button
-            android:id="@+id/back_button_payment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Back"
-            android:backgroundTint="@color/black"
-            android:textColor="@color/white"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="16dp" />
-
         <!-- Title -->
         <TextView
             android:id="@+id/payment_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Payment "
+            android:text="Payment Information"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp" />
 
-        <!-- Description of Purchase Options -->
+        <!-- Card Number Input -->
         <TextView
-            android:id="@+id/purchase_description"
+            android:id="@+id/card_number_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Choose your payment method to purchase a workout plan or hire a trainer"
-            android:textColor="@color/white"
+            android:text="Card Number"
             android:textSize="16sp"
-            android:layout_below="@id/payment_title"
-            android:layout_marginTop="20dp" />
-
-        <!-- Workout Plan Purchase Button -->
-        <Button
-            android:id="@+id/workout_plan_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Purchase Workout Plan - $29.99"
-            android:backgroundTint="@color/black"
             android:textColor="@color/white"
-            android:layout_below="@id/purchase_description"
+            android:layout_below="@id/payment_title"
             android:layout_marginTop="30dp" />
 
-        <!-- Trainer Hire Button -->
-        <Button
-            android:id="@+id/trainer_hire_button"
+        <EditText
+            android:id="@+id/card_number_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hire Virtual Trainer - $49.99"
-            android:backgroundTint="@color/black"
-            android:textColor="@color/white"
-            android:layout_below="@id/workout_plan_button"
-            android:layout_marginTop="20dp" />
+            android:hint="Enter 16-digit Card Number"
+            android:inputType="number"
+            android:maxLength="16"
+            android:textColor="@color/black"
+            android:layout_below="@id/card_number_label"
+            android:layout_marginTop="8dp"
+            android:padding="10dp"
+            android:background="@color/white" />
 
-        <!-- Subscription Button (Moved) -->
-        <Button
-            android:id="@+id/subscription_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Subscription"
-            android:backgroundTint="@color/black"
-            android:textColor="@color/white"
-            android:layout_below="@id/trainer_hire_button"
-            android:layout_marginTop="20dp" />
-
-        <!-- Payment Method Title -->
+        <!-- CVV Input -->
         <TextView
-            android:id="@+id/payment_method_title"
+            android:id="@+id/cvv_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select Payment Method"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            android:text="CVV"
+            android:textSize="16sp"
             android:textColor="@color/white"
-            android:layout_below="@id/subscription_button"
-            android:layout_marginTop="40dp" />
-
-        <!-- Debit/Credit Card Payment Button -->
-        <Button
-            android:id="@+id/card_payment_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Pay with Debit/Credit Card"
-            android:backgroundTint="@color/black"
-            android:textColor="@color/white"
-            android:layout_below="@id/payment_method_title"
+            android:layout_below="@id/card_number_input"
             android:layout_marginTop="20dp" />
 
-        <!-- PayPal Payment Button -->
-        <Button
-            android:id="@+id/paypal_payment_button"
+        <EditText
+            android:id="@+id/cvv_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pay with PayPal"
-            android:backgroundTint="@color/black"
+            android:hint="Enter CVV"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textColor="@color/black"
+            android:layout_below="@id/cvv_label"
+            android:layout_marginTop="8dp"
+            android:padding="10dp"
+            android:background="@color/white" />
+
+        <!-- Expiration Date Input -->
+        <TextView
+            android:id="@+id/expiration_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expiration Date (MM/YY)"
+            android:textSize="16sp"
             android:textColor="@color/white"
-            android:layout_below="@id/card_payment_button"
+            android:layout_below="@id/cvv_input"
             android:layout_marginTop="20dp" />
 
+        <EditText
+            android:id="@+id/expiration_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="MM/YY"
+            android:inputType="text"
+            android:maxLength="5"
+            android:textColor="@color/black"
+            android:layout_below="@id/expiration_label"
+            android:layout_marginTop="8dp"
+            android:padding="10dp"
+            android:background="@color/white" />
+
+        <!-- Submit Payment Button -->
+        <Button
+            android:id="@+id/submit_payment_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit Payment"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:layout_below="@id/expiration_input"
+            android:layout_marginTop="30dp" />
+        <!-- Horizontal Button Container -->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="770dp"
+            android:layout_marginTop="780dp"
             android:gravity="center">
 
             <!-- Dash Button -->
@@ -151,7 +145,6 @@
                 android:textColor="@android:color/white" />
 
         </LinearLayout>
-
     </RelativeLayout>
 
 </ScrollView>

@@ -1,81 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:padding="16dp">
+    android:background="#1d1e22">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <!-- Live Date Display -->
+    <TextView
+        android:id="@+id/liveDateTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:text="Date goes here"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif" />
 
-        <!-- App Title -->
-        <TextView
-            android:id="@+id/appTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Welcome to PHFT"
-            android:textSize="24sp"
-            android:textColor="#333333"
-            android:fontFamily="sans-serif-black"
-            android:paddingBottom="16dp" />
 
-        <!-- Welcome Message -->
-        <TextView
-            android:id="@+id/welcomeMessage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Track your health and fitness journey with ease!"
-            android:textSize="16sp"
-            android:textColor="#777777"
-            android:fontFamily="sans-serif"
-            android:paddingBottom="24dp" />
 
-        <!-- Login as General User Button -->
-        <Button
-            android:id="@+id/btnGeneralUser"
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/liveDateTextView"
+        android:padding="16dp">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
-            android:backgroundTint="#FF5722"
-            android:textColor="#FFFFFF"
-            android:paddingVertical="10dp"
-            android:layout_marginBottom="12dp" />
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
-        <!-- Sign Up Button -->
-        <Button
-            android:id="@+id/btnSignUpUser"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:backgroundTint="#004AFF"
-            android:textColor="#FFFFFF"
-            android:paddingVertical="10dp"
-            android:layout_marginBottom="12dp" />
+            <!-- App Title -->
+            <TextView
+                android:layout_marginTop="22dp"
+                android:id="@+id/appTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome to FitSync"
+                android:textSize="34sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif-black"
+                android:paddingBottom="1dp" />
 
-        <!-- Continue as Guest Button -->
-        <Button
-            android:id="@+id/btnGuestUser"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Continue as Guest"
-            android:backgroundTint="#FF5722"
-            android:textColor="#FFFFFF"
-            android:paddingVertical="10dp"
-            android:layout_marginBottom="12dp" />
+            <!-- Welcome Message -->
+            <TextView
+                android:id="@+id/welcomeMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Track your health and fitness journey"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:paddingBottom="114dp" />
 
-        <!-- Login as Personal Trainer Button -->
-        <Button
-            android:id="@+id/btnPersonalTrainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Personal Trainer Login"
-            android:backgroundTint="#004AFF"
-            android:textColor="#FFFFFF"
-            android:paddingVertical="10dp" />
+            <!-- Buttons -->
+            <!-- Login as General User Button -->
+            <Button
+                android:id="@+id/btnGeneralUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:backgroundTint="#89FC10"
+                android:textColor="#000000"
+                android:paddingVertical="10dp"
+                android:layout_marginBottom="12dp" />
 
-    </LinearLayout>
-</ScrollView>
+            <!-- Sign Up Button -->
+            <Button
+                android:id="@+id/btnSignUpUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sign Up"
+                android:backgroundTint="#89FC10"
+                android:textColor="#000000"
+                android:paddingVertical="10dp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Continue as Guest Button -->
+            <Button
+                android:id="@+id/btnGuestUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Continue as Guest"
+                android:backgroundTint="#89FC10"
+                android:textColor="#000000"
+                android:paddingVertical="10dp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Login as Personal Trainer Button -->
+            <Button
+                android:id="@+id/btnPersonalTrainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Personal Trainer Login"
+                android:backgroundTint="#89FC10"
+                android:textColor="#000000"
+                android:paddingVertical="10dp"
+                android:layout_marginBottom="120dp"/>
+
+            <!-- Live Data Display -->
+            <TextView
+                android:id="@+id/liveDataTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fetching live data..."
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:paddingBottom="16dp"
+                android:fontFamily="sans-serif"
+                android:layout_below="@id/liveDateTextView" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

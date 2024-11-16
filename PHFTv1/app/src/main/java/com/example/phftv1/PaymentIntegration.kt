@@ -24,13 +24,27 @@ class PaymentIntegration : AppCompatActivity() {
 //            startActivity(intent)
 //        }
 
-
+        findViewById<Button>(R.id.dash_button).setOnClickListener {
+            val intent = Intent(this, Dashboard::class.java)
+            startActivity(intent)
+        }
+        findViewById<Button>(R.id.progress_button).setOnClickListener {
+            val intent = Intent(this, ProgressMonitoring::class.java)
+            startActivity(intent)
+        }
+        findViewById<Button>(R.id.share_button).setOnClickListener {
+            val intent = Intent(this, SocialFeatures::class.java)
+            startActivity(intent)
+        }
         findViewById<Button>(R.id.subscription_button).setOnClickListener {
             val intent = Intent(this, Subscription::class.java)
             startActivity(intent)
         }
 
-
+        findViewById<Button>(R.id.card_payment_button).setOnClickListener {
+            val intent = Intent(this, cardInput::class.java)
+            startActivity(intent)
+        }
 
         // Back button functionality
         findViewById<Button>(R.id.back_button_payment).setOnClickListener {
@@ -48,9 +62,9 @@ class PaymentIntegration : AppCompatActivity() {
         }
 
         // Debit/Credit Card Payment button
-        findViewById<Button>(R.id.card_payment_button).setOnClickListener {
-            initiateCardPayment()
-        }
+//        findViewById<Button>(R.id.card_payment_button).setOnClickListener {
+//            initiateCardPayment()
+//        }
 
         // PayPal Payment button
         findViewById<Button>(R.id.paypal_payment_button).setOnClickListener {

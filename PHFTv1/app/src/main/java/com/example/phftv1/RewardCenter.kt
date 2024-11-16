@@ -25,6 +25,19 @@ class RewardCenter : AppCompatActivity() {
 //            insets
 //        }
 
+        findViewById<Button>(R.id.dash_button).setOnClickListener {
+            val intent = Intent(this, Dashboard::class.java)
+            startActivity(intent)
+        }
+        findViewById<Button>(R.id.progress_button).setOnClickListener {
+            val intent = Intent(this, ProgressMonitoring::class.java)
+            startActivity(intent)
+        }
+        findViewById<Button>(R.id.share_button).setOnClickListener {
+            val intent = Intent(this, SocialFeatures::class.java)
+            startActivity(intent)
+        }
+
         findViewById<Button>(R.id.back_button_reward_center).setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
