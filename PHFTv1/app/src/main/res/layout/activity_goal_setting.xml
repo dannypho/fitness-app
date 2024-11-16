@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/login_background">
 
+    <!-- Back Button -->
     <Button
         android:id="@+id/back_buttonGOAL"
         android:layout_width="wrap_content"
@@ -14,13 +15,16 @@
         android:layout_alignParentStart="true"
         android:layout_margin="16dp" />
 
+    <!-- Main Container Layout -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp"
-        android:layout_below="@id/back_buttonGOAL">
+        android:layout_below="@id/back_buttonGOAL"
+        android:layout_marginTop="20dp">
 
+        <!-- Title Text -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,44 +35,69 @@
             android:layout_gravity="center"
             android:layout_marginBottom="20dp" />
 
-        <!-- Running Goal Field -->
-        <EditText
-            android:id="@+id/running_goal"
+        <!-- Running Goal Input Field -->
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/rounded_corner_username"
-            android:hint="e.g., Run 5 miles a week"
-            android:padding="10dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="18sp" />
+            android:layout_marginBottom="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/running_goal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="e.g., Run 5 miles a week"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Calories Goal Field -->
-        <EditText
-            android:id="@+id/calories_goal"
+        <!-- Calories Goal Input Field -->
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/rounded_corner_username"
-            android:hint="e.g., Burn 2000 calories a week"
-            android:padding="10dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="18sp" />
+            android:layout_marginBottom="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/calories_goal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="e.g., Burn 2000 calories a week"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Weight Goal Field -->
-        <EditText
-            android:id="@+id/weight_goal"
+        <!-- Weight Goal Input Field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/weight_goal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="e.g., Lose/Gain 10 lbs a month"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Goal Date Selection -->
+        <TextView
+            android:id="@+id/goal_date_display"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Goal Date"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
+            android:textSize="18sp"
+            android:gravity="center" />
+
+        <DatePicker
+            android:id="@+id/goal_date_picker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/rounded_corner_username"
-            android:hint="e.g., Lose/Gain 10 lbs a month"
-            android:padding="10dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="18sp" />
+            android:calendarViewShown="false"
+            android:visibility="gone"/>
 
         <!-- Save Goals Button -->
         <Button
@@ -79,6 +108,59 @@
             android:backgroundTint="@color/black"
             android:textColor="@color/white"
             android:layout_marginTop="20dp" />
+
+        <!-- Clear Goals Button -->
+        <Button
+            android:id="@+id/clear_goals_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clear Goals"
+            android:backgroundTint="@color/light_gray"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="770dp"
+        android:gravity="center">
+
+        <!-- Dash Button -->
+        <Button
+            android:id="@+id/dash_button"
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Dashboard"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="5dp"
+            android:backgroundTint="@android:color/black" />
+
+        <!-- Progress Button -->
+        <Button
+            android:id="@+id/progress_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Progress"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="5dp"
+            android:backgroundTint="@android:color/black" />
+
+        <!-- Share Button -->
+        <Button
+            android:id="@+id/share_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/black"
+            android:text="Share"
+            android:textColor="@android:color/white" />
 
     </LinearLayout>
 </RelativeLayout>

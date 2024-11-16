@@ -24,7 +24,18 @@ class ExercisePlans : AppCompatActivity() {
 //            val intent = Intent(this, Dashboard::class.java)
 //            startActivity(intent)
 //        }
-
+        findViewById<Button>(R.id.dash_button).setOnClickListener {
+            val intent = Intent(this, Dashboard::class.java)
+            startActivity(intent)
+        }
+        findViewById<Button>(R.id.progress_button).setOnClickListener {
+            val intent = Intent(this, ProgressMonitoring::class.java)
+            startActivity(intent)
+        }
+        findViewById<Button>(R.id.share_button).setOnClickListener {
+            val intent = Intent(this, SocialFeatures::class.java)
+            startActivity(intent)
+        }
         // Back button functionality
         findViewById<Button>(R.id.back_button_exercise).setOnClickListener {
             finish() // Closes the current activity and goes back

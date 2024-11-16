@@ -24,6 +24,7 @@ class Tracking : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_tracking)
 
+
         val stepsInput = findViewById<TextView>(R.id.steps_input)
         val distanceInput = findViewById<TextView>(R.id.distance_input)
         val caloriesBurnedInput = findViewById<TextView>(R.id.calories_burned_input)
@@ -76,6 +77,18 @@ class Tracking : AppCompatActivity() {
             metricView.adapter = metricArrayAdapter
         }
 
+        findViewById<Button>(R.id.dash_button).setOnClickListener {
+            val intent = Intent(this, Dashboard::class.java)
+            startActivity(intent)
+        }
+        findViewById<Button>(R.id.progress_button).setOnClickListener {
+            val intent = Intent(this, ProgressMonitoring::class.java)
+            startActivity(intent)
+        }
+        findViewById<Button>(R.id.share_button).setOnClickListener {
+            val intent = Intent(this, SocialFeatures::class.java)
+            startActivity(intent)
+        }
         findViewById<Button>(R.id.back_buttonTRACKING).setOnClickListener {
             val intent = Intent(this, Dashboard::class.java)
             startActivity(intent)

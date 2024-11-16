@@ -61,7 +61,7 @@ class SocialFeatures : AppCompatActivity() {
 
     private fun postToSocialMedia() {
         // Logic to share a post on social media
-        val textToShare = "I just achieved my fitness goal! #FitnessGoals #PHFTApp"
+        val textToShare = "I just achieved my fitness goal! #FitnessGoals #FitSyncApp"
         val sendIntent = Intent().apply {
             action = Intent.ACTION_SEND
             putExtra(Intent.EXTRA_TEXT, textToShare)

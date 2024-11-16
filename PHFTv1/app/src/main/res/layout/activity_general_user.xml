@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/rounded_corner_username"
-            android:hint="UserName"
+            android:hint="Username"
             android:inputType="text"
             android:padding="7dp"
             android:textColor="@color/white"
@@ -61,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="v1 Use 'u' for Username and 'p' for Password"
+            android:text="App Version 1.0"
             android:textColor="@color/white"
             android:textSize="15sp" />
 

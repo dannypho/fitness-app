@@ -61,6 +61,18 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="20sp" />
+        <EditText
+            android:id="@+id/email_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_corner_username"
+            android:hint="Email Address"
+            android:inputType="textEmailAddress"
+            android:padding="7dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp" />
 
         <!-- Weight Field -->
         <EditText
@@ -111,7 +123,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/rounded_corner_username"
-            android:hint="Password"
+            android:hint="Password (at least 8 characters)"
             android:inputType="textPassword"
             android:padding="10dp"
             android:textColor="@color/white"

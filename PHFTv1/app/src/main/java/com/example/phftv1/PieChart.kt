@@ -6,6 +6,7 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Surface
@@ -44,22 +45,32 @@ fun MultiPieChartScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(Black)
-            .padding(16.dp), // Optional padding around the entire list
+            .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(24.dp)
-
     ) {
         items(pieChartDataList) { data ->
-            // Render each PieChart with its unique data
-            PieChart(
-                data = data,
-                radiusOuter = radiusOuter,
-                chartBarWidth = chartBarWidth,
-                animDuration = animDuration
-            )
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .border(
+                        width = 2.dp,
+                        color = Color.Gray,
+                        shape = RoundedCornerShape(12.dp)
+                    )
+                    .padding(16.dp)
+            ) {
+                PieChart(
+                    data = data,
+                    radiusOuter = radiusOuter,
+                    chartBarWidth = chartBarWidth,
+                    animDuration = animDuration
+                )
+            }
             Spacer(modifier = Modifier.height(30.dp)) // Space between charts
         }
     }
 }
+
 
 @Composable
 fun PieChart(
@@ -82,7 +93,7 @@ fun PieChart(
     var lastValue = -90f
     var animationProgress by remember { mutableStateOf(0f) }
 
-    val units = listOf("distance(miles)  ", "distance(miles) ", "distance(miles) ", "Yoga(poses) ", "HIIT(minutes) ","Weightlifting(lbs) ")
+    val units = listOf("Distance(miles)  ", "Distance(miles) ", "Distance(miles) ", "Yoga(poses) ", "HIIT(minutes) ","Weightlifting(lbs) ")
     val pieData = mapOf(
         units[data["chart_name"]!!] to stepsCompleted.toInt(),
         "Goal" to totalSum.toInt()
@@ -187,18 +198,15 @@ fun DetailsPieChartItem(
     height: Dp = 45.dp,
     color: Color
 ) {
-
     Surface(
         modifier = Modifier
             .padding(vertical = 10.dp, horizontal = 40.dp),
         color = Color.Transparent
     ) {
-
         Row(
             modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
         ) {
-
             Box(
                 modifier = Modifier
                     .background(
@@ -208,25 +216,32 @@ fun DetailsPieChartItem(
                     .size(height)
             )
 
-            Column(modifier = Modifier.fillMaxWidth()) {
-                Text(
-                    modifier = Modifier.padding(start = 15.dp),
-                    text = data.first,
-                    fontWeight = FontWeight.Medium,
-                    fontSize = 22.sp,
-                    color = uiColor
-                )
-                Text(
-                    modifier = Modifier.padding(start = 15.dp),
-                    text = data.second.toString(),
-                    fontWeight = FontWeight.Medium,
-                    fontSize = 22.sp,
-                    color = uiColor
-                )
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 15.dp)
+                    .border(
+                        width = 1.dp,
+                        color = Color.Gray,
+                        shape = RoundedCornerShape(8.dp)
+                    )
+                    .padding(8.dp) // Padding inside the border box
+            ) {
+                Column {
+                    Text(
+                        text = data.first,
+                        fontWeight = FontWeight.Medium,
+                        fontSize = 22.sp,
+                        color = uiColor
+                    )
+                    Text(
+                        text = data.second.toString(),
+                        fontWeight = FontWeight.Medium,
+                        fontSize = 22.sp,
+                        color = uiColor
+                    )
+                }
             }
-
         }
-
     }
-
 }

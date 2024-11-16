@@ -20,7 +20,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PHFT Reward Center"
+        android:text="FitSync Reward Center"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Your Points: 0"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="18sp"
         android:layout_below="@id/back_button_reward_center"
         android:layout_marginTop="40dp" />
@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Your Level: Silver"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="18sp"
         android:layout_below="@id/user_points"
         android:layout_marginTop="8dp" />
@@ -113,4 +113,44 @@
         android:layout_below="@id/redeemed_products_title"
         android:layout_marginTop="10dp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="770dp"
+        android:gravity="center">
+
+        <!-- Dash Button -->
+        <Button
+            android:id="@+id/dash_button"
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Dashboard"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="5dp"
+            android:backgroundTint="@android:color/black" />
+
+        <!-- Progress Button -->
+        <Button
+            android:id="@+id/progress_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Progress"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="5dp"
+            android:backgroundTint="@android:color/black" />
+
+        <!-- Share Button -->
+        <Button
+            android:id="@+id/share_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/black"
+            android:text="Share"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
 </RelativeLayout>
