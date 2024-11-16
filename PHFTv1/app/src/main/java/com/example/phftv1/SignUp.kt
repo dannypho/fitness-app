@@ -108,6 +108,14 @@ class SignUp : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
+
+        findViewById<Button>(R.id.onBackToLogin ).setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+
+
         val usernameEditText = findViewById<EditText>(R.id.UserName_input)
         val nameEditText = findViewById<EditText>(R.id.fullname_input)
         val emailEditText = findViewById<EditText>(R.id.email_input)

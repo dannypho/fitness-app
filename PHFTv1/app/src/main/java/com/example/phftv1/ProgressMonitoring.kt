@@ -44,34 +44,34 @@ class ProgressMonitoring : AppCompatActivity() {
                     // Preview with sample data
                     val pieChartDataList = listOf(
                         mapOf(
-                            "Steps_Goal" to 10000,
-                            "Steps_completed" to 2500,
+                            "Steps_Goal" to 5,
+                            "Steps_completed" to 3,
                             "chart_name" to 0
                         ),
                         mapOf(
-                            "Steps_Goal" to 8000,
-                            "Steps_completed" to 4000,
+                            "Steps_Goal" to 10,
+                            "Steps_completed" to 6,
                             "chart_name" to 1
                         ),
                         mapOf(
-                            "Steps_Goal" to 15000,
-                            "Steps_completed" to 7000,
+                            "Steps_Goal" to 15,
+                            "Steps_completed" to 8,
                             "chart_name" to 2
                         ),
                         mapOf(
-                                "Steps_Goal" to 15000,
-                        "Steps_completed" to 9000,
+                                "Steps_Goal" to 15,
+                        "Steps_completed" to 9,
                             "chart_name" to 3
                     ),
                         mapOf(
-                        "Steps_Goal" to 12000,
-                        "Steps_completed" to 10000,
+                        "Steps_Goal" to 90,
+                        "Steps_completed" to 30,
                             "chart_name" to 4
 
                     ),
                         mapOf(
-                            "Steps_Goal" to 12000,
-                            "Steps_completed" to 11000,
+                            "Steps_Goal" to 600,
+                            "Steps_completed" to 500,
                             "chart_name" to 5
                         )
                     )
