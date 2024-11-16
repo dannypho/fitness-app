@@ -73,7 +73,7 @@ class Tracking : AppCompatActivity() {
             dataBaseHelper.addMetric(metricModel)
             val allMetrics = dataBaseHelper.getMetric(userid)
 
-            val metricArrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, allMetrics.map { it.toString() })
+            val metricArrayAdapter = ArrayAdapter<String>(this, R.layout.list_item_white_text, R.id.text_view_item, allMetrics.map { it.toString() })
             metricView.adapter = metricArrayAdapter
         }
 
