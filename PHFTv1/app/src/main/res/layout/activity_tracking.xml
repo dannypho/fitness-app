@@ -73,7 +73,7 @@
             android:textColorHint="@color/white"
             android:textSize="18sp" />
 
-        <!-- Heart Rate Field -->
+        <!-- Activity Field -->
         <EditText
             android:id="@+id/heart_rate_input"
             android:layout_width="match_parent"
@@ -86,16 +86,57 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="18sp" />
+        <!-- Heart Rate Field -->
+        <EditText
+            android:id="@+id/activity_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_corner_username"
+            android:hint="Activity"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="18sp" />
 
         <!-- Import Data Button -->
+        <EditText
+            android:id="@+id/date_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_corner_username"
+            android:hint="Date"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/add_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/black"
+            android:text="Add"
+            android:textColor="@color/white" />
+
+        <!-- Add Button -->
         <Button
             android:id="@+id/import_data_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Import Data from Wearable"
+            android:layout_marginTop="10dp"
             android:backgroundTint="@color/black"
-            android:textColor="@color/white"
-            android:layout_marginTop="20dp" />
+            android:text="Import Data from Wearable"
+            android:textColor="@color/white" />
+
+        <ListView
+            android:id="@+id/metric_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 </RelativeLayout>
