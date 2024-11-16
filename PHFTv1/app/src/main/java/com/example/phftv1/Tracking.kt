@@ -34,35 +34,51 @@ class Tracking : AppCompatActivity() {
         val importDataButton = findViewById<Button>(R.id.import_data_button)
         val metricView = findViewById<ListView>(R.id.metric_view)
 
-
         addButton.setOnClickListener {
-            val metricModel = TrackingData(
-                -1,
-                userid,
-                activityInput.text.toString(),
-                dateInput.text.toString(),
-                stepsInput.text.toString().toIntOrNull() ?: 0,
-                distanceInput.text.toString().toDoubleOrNull() ?: 0.0,
-                caloriesBurnedInput.text.toString().toDoubleOrNull() ?: 0.0,
-                heartRateInput.text.toString().toIntOrNull() ?: 0
-            )
+            // Declare metricModel here, outside the try-catch block
+            val metricModel: TrackingData
 
 
+
+            try {
+                val date = dateInput.text.toString()
+                val activity = activityInput.text.toString()
+                if (date.isEmpty()) {
+                    Toast.makeText(this, "Date is required", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                if (activity.isEmpty()) {
+                    Toast.makeText(this, "Activity is required", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                metricModel = TrackingData(
+                    -1,
+                    userid,
+                    activityInput.text.toString(),
+                    dateInput.text.toString(),
+                    stepsInput.text.toString().toIntOrNull() ?: 0,
+                    distanceInput.text.toString().toDoubleOrNull() ?: 0.0,
+                    caloriesBurnedInput.text.toString().toDoubleOrNull() ?: 0.0,
+                    heartRateInput.text.toString().toIntOrNull() ?: 0
+                )
+                Toast.makeText(this, metricModel.toString(), Toast.LENGTH_SHORT).show()
+            } catch (e: Exception) {
+                Toast.makeText(this, "Error creating metric", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Now this is in the correct scope
             val dataBaseHelper = DataBaseHelper(this)
             dataBaseHelper.addMetric(metricModel)
             val allMetrics = dataBaseHelper.getMetric(userid)
 
             val metricArrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, allMetrics.map { it.toString() })
             metricView.adapter = metricArrayAdapter
-
-
         }
 
         findViewById<Button>(R.id.back_buttonTRACKING).setOnClickListener {
             val intent = Intent(this, Dashboard::class.java)
             startActivity(intent)
         }
-
-
     }
 }
