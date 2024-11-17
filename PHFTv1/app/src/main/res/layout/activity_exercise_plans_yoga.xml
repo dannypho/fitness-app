@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/login_background"
+    android:padding="16dp">
+
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/back_button_exercise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:layout_alignParentStart="true"
+        android:layout_margin="16dp" />
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:text="Yoga Routines"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Section for Pre-set Workout Routines -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="4dp">
+
+                    <ImageView
+                        android:id="@+id/CresentMoon"
+                        android:layout_width="380dp"
+                        android:layout_height="309dp"
+                        tools:layout_editor_absoluteX="-1dp"
+                        tools:layout_editor_absoluteY="118dp" />
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Archer"
+                        android:textColor="#000000"
+                        android:textSize="30sp"
+                        tools:layout_editor_absoluteX="145dp"
+                        tools:layout_editor_absoluteY="17dp" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="355dp"
+                        android:layout_height="201dp"
+                        android:text="Begin in seated position with your legs straight in front and hinge forward. Wrap your index and middle fingers around your big toes. Bend one knee and place the heel on the floor a few inches away from your opposite inner knee. Press the back of your straight leg into the floor then hinge slightly forward. Keep a strong hold of both big toes and pick up the leg of your bent knee. You may need to lean your weight slightly over toward the straight leg. Draw your elbow and shoulder back to bring your foot close to your ear and then root both sitting bones as much as possible."
+                        tools:layout_editor_absoluteX="12dp"
+                        tools:layout_editor_absoluteY="57dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="554dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/CresentMoon"
+                        android:layout_width="380dp"
+                        android:layout_height="309dp"
+                        app:layout_constraintTop_toBottomOf="@+id/textView2"
+                        app:srcCompat="@drawable/bird_of_paradise_revolved_r"
+                        tools:layout_editor_absoluteX="-1dp" />
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Revolved Bird of Paradise "
+                        android:textColor="#000000"
+                        android:textSize="30sp"
+                        tools:layout_editor_absoluteX="15dp"
+                        tools:layout_editor_absoluteY="13dp" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="355dp"
+                        android:layout_height="201dp"
+                        android:text="From Revolved Chair pose, the lower arm reaches back around the legs as the upper arm wraps around the back and the fingers of the respective hands eventually meet and interlace. One foot stays rooted into the earth and straightens while the opposite leg comes up with a bent knee. Once you are standing upright extend the leg toward the sky. The ribcage is lifted and the heart is open in the full expression of the pose. The gaze is forward."
+                        tools:layout_editor_absoluteX="12dp"
+                        tools:layout_editor_absoluteY="53dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/CresentMoon"
+                        android:layout_width="380dp"
+                        android:layout_height="309dp"
+                        app:srcCompat="@drawable/crescent_moon_r"
+                        tools:layout_editor_absoluteX="-1dp"
+                        tools:layout_editor_absoluteY="106dp" />
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Crescent Moon"
+                        android:textColor="#000000"
+                        android:textSize="30sp"
+                        tools:layout_editor_absoluteX="87dp"
+                        tools:layout_editor_absoluteY="16dp" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="355dp"
+                        android:layout_height="201dp"
+                        android:text="From Upward Salute pose, extend upwards toward the sky as you bend to one side, lengthening the opposite side of the rib cage and stretch."
+                        tools:layout_editor_absoluteX="12dp"
+                        tools:layout_editor_absoluteY="67dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+    <!--    <LinearLayout-->
+<!--        android:id="@+id/preset_workout_routines_section"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_below="@id/back_button_exercise"-->
+<!--        android:layout_marginTop="30dp">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/preset_routine_yoga"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:backgroundTint="@color/black"-->
+<!--            android:text="Yoga Routines"-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/preset_routine_hiit"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="HIIT Routine"-->
+<!--            android:backgroundTint="@color/black"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:layout_marginBottom="10dp" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/preset_routine_weightlifting"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Weightlifting Routine"-->
+<!--            android:backgroundTint="@color/black"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:layout_marginBottom="10dp" />-->
+<!--    </LinearLayout>-->
+
+    <!-- Section for Custom Workout Plan -->
+
+</RelativeLayout>
