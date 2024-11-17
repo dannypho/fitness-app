@@ -239,6 +239,7 @@ class GeneralUser : AppCompatActivity() {
             // Check credentials in the database
             if (dbHelper.verifyLogin(username, password)) {
                 Log.i("USER CHECK", "Login successful")
+                RegistrationController().login(username,password,dbHelper)
                 val intent = Intent(this, Dashboard::class.java)
                 startActivity(intent)
             } else {

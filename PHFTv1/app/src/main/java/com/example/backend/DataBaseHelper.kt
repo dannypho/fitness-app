@@ -112,7 +112,6 @@ open class DataBaseHelper(context: Context,
         cv.put(COLUMN_GOAL, goal)
 
         val insert = db.insert(GOALS_TABLE, null, cv)
-        db.close()
 
         return insert != -1L
     }
@@ -154,7 +153,6 @@ open class DataBaseHelper(context: Context,
             Log.e("DatabaseError", "Invalid query: ${e.message}")
             return false
         }
-        db.close()
         return dbPassword == password
     }
 
@@ -165,9 +163,11 @@ open class DataBaseHelper(context: Context,
         try {
             // Get the user ID using getUID method
             val userId = getUID(userName)
-
+            Log.i("getUser", userId)
+            Log.i("isDBopen", db.isOpen.toString())
             // Query to get the full user details from USER_TABLE using userId
             val userQuery = "SELECT * FROM $USER_TABLE WHERE $COLUMN_USER_ID = ?"
+            Log.d("SQLDebug", "Query: $userQuery, Params: $userId")
             val userCursor = db.rawQuery(userQuery, arrayOf(userId))
 
             // Populate the User object if data is found
@@ -187,10 +187,7 @@ open class DataBaseHelper(context: Context,
             userCursor.close()
         } catch (e: Exception) {
             e.printStackTrace()
-        } finally {
-            db.close()
         }
-
         return user // Return null if no user is found
     }
 
@@ -205,11 +202,11 @@ open class DataBaseHelper(context: Context,
         if (cursor.moveToFirst()) {
             userId = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_USER_ID))
         }
+        Log.i("UserID", userId.toString())
 
         cursor.close()
-        db.close()
 
-        return userId ?: ""  // Return an empty string if userId is not found
+        return userId.toString() ?: ""  // Return an empty string if userId is not found
     }
 
     fun updateUser(user: User): Boolean {
@@ -227,7 +224,6 @@ open class DataBaseHelper(context: Context,
 
         // Update the row and check if the operation was successful
         val rowsAffected = db.update(USER_TABLE, cv, "$COLUMN_USER_ID = ?", arrayOf(user.id))
-        db.close()
 
         // Return true if at least one row was updated, otherwise false
         return rowsAffected > 0
@@ -245,9 +241,17 @@ open class DataBaseHelper(context: Context,
         // Insert the login information into LOGIN_TABLE
          db.insert(LOGIN_TABLE, null, cv)
 
-        // Close the database connection
-        db.close()
 
+    }
+
+    fun closeDatabase() {
+        try {
+            this.readableDatabase.close() // Close readable connection
+            this.writableDatabase.close() // Close writable connection
+            Log.d("DatabaseHelper", "Database closed successfully.")
+        } catch (e: Exception) {
+            Log.e("DatabaseHelper", "Error closing database: ${e.message}")
+        }
     }
 
 

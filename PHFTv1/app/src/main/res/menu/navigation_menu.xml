@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Dashboard"
+        android:id="@+id/dashboard"
+        android:icon="@drawable/icons8_dashboard_64"
+        />
+
+    <item android:title="Monitoring"
+        android:id="@+id/monitoring"
+        android:icon="@drawable/icons8_monitoring_64"
+        />
+
+    <item android:title="Profile"
+        android:id="@+id/profile"
+        android:icon="@drawable/vecteezy_user_profile_icon_profile_avatar_user_icon_male_icon_20911737"
+        />
+</menu>

@@ -1,5 +1,7 @@
 package com.example.backend
 
+import android.content.Context
+import android.util.Log
 import com.example.Model.User
 
 object SessionManager {
@@ -17,8 +19,11 @@ object SessionManager {
         currentUser.height = user.height
     }
 
-    fun logout() {
+    fun logout(context: Context) {
         currentUser = User()  // Reset to default or guest user
+        // Close database connection
+        val dbHelper = DataBaseHelper(context)
+        dbHelper.closeDatabase() // Ensure the database connection is closed
     }
 
     fun isLoggedIn(): Boolean = currentUser.id.isNotEmpty()

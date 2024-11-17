@@ -100,6 +100,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.Controller.RegistrationController
+import com.example.Model.User
 import com.example.backend.DataBaseHelper
 
 class SignUp : AppCompatActivity() {
@@ -121,6 +122,13 @@ class SignUp : AppCompatActivity() {
         val emailEditText = findViewById<EditText>(R.id.email_input)
         val passwordEditText = findViewById<EditText>(R.id.password_input)
         val confirmPasswordEditText = findViewById<EditText>(R.id.confirm_password_input)
+
+        val ageEditText = findViewById<EditText>(R.id.age_inputGeneral)
+        val heightEditText = findViewById<EditText>(R.id.height_inputGeneral)
+        val weightEditText = findViewById<EditText>(R.id.weight_inputGeneral)
+
+
+
 
         // Sign-up button functionality
         findViewById<Button>(R.id.signup_btn).setOnClickListener {
@@ -164,6 +172,9 @@ class SignUp : AppCompatActivity() {
             // If all validations pass, save user information
             val user = RegistrationController().registerUserInfo(username, password, dbHelper)
             user.name = fullName
+            user.age = ageEditText.text.toString().toInt()
+            user.height = heightEditText.text.toString().toInt()
+            user.weight = weightEditText.text.toString().toInt()
            // user.email = email
 
             // Call your method to save the user in the database

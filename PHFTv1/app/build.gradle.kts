@@ -49,6 +49,7 @@ dependencies {
         implementation("androidx.compose.ui:ui:1.8.0-alpha06") // Adjust version if needed
         implementation("androidx.compose.ui:ui-tooling-preview:1.8.0-alpha06")
         implementation("androidx.compose.material:material:1.1.1")
+    implementation("com.google.android.material:material:1.2.1")
 
 
 

@@ -1,5 +1,6 @@
 package com.example.Controller
 
+import android.content.Context
 import android.util.Log
 import com.example.Model.ROLES
 import com.example.Model.User
@@ -29,7 +30,9 @@ class RegistrationController  {
         if (dbHelper.getUID(userName)!= ""){
             if(dbHelper.verifyLogin(userName,password)){
                 user = dbHelper.getUserByUsername(userName)
+                Log.i("UserInRegistration",user.toString())
                 SessionManager.loginUser(user)
+                Log.i("SessionManager", SessionManager.currentUser.toString())
                 isLoggedIn = true
             }
         }
@@ -51,8 +54,8 @@ class RegistrationController  {
 
 
     // Logout a user
-    fun logout() {
-        SessionManager.logout()
+    fun logout(context: Context) {
+        SessionManager.logout(context)
     }
 
 
