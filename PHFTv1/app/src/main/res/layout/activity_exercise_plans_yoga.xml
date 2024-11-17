@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:text="Yoga Routines"
+        android:text="Yoga Routine"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -41,6 +41,7 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_mountain"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -49,119 +50,64 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="4dp">
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/title_mountain"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Mountain"
+                        android:textAlignment="center"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="(1 Minute)"
+                        android:textAlignment="center"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="The body stands upright with feet together, evenly distributing weight on the feet's four corners. The pelvis is tucked, the ribcage lifted, and the neck aligns naturally with the spine, with the chin slightly tucked. Shoulders are relaxed, rotated back and down, arms rest at the sides, and the gaze is forward."
+                        android:textAlignment="center" />
 
                     <ImageView
-                        android:id="@+id/CresentMoon"
-                        android:layout_width="380dp"
-                        android:layout_height="309dp"
-                        app:srcCompat="@drawable/Archer_R"
-                        tools:layout_editor_absoluteX="-1dp"
-                        tools:layout_editor_absoluteY="118dp" />
-
-                    <TextView
-                        android:id="@+id/title"
+                        android:id="@+id/imageView2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Archer"
-                        android:textColor="#000000"
-                        android:textSize="30sp"
-                        tools:layout_editor_absoluteX="145dp"
-                        tools:layout_editor_absoluteY="17dp" />
+                        android:layout_height="222dp"
+                        app:srcCompat="@drawable/yoga_mountain" />
+                </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="355dp"
-                        android:layout_height="201dp"
-                        android:text="Begin in seated position with your legs straight in front and hinge forward. Wrap your index and middle fingers around your big toes. Bend one knee and place the heel on the floor a few inches away from your opposite inner knee. Press the back of your straight leg into the floor then hinge slightly forward. Keep a strong hold of both big toes and pick up the leg of your bent knee. You may need to lean your weight slightly over toward the straight leg. Draw your elbow and shoulder back to bring your foot close to your ear and then root both sitting bones as much as possible."
-                        tools:layout_editor_absoluteX="12dp"
-                        tools:layout_editor_absoluteY="57dp" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_upward_salute"
                 android:layout_width="match_parent"
                 android:layout_height="554dp"
                 android:layout_marginBottom="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/CresentMoon"
-                        android:layout_width="380dp"
-                        android:layout_height="309dp"
-                        app:layout_constraintTop_toBottomOf="@+id/textView2"
-                        app:srcCompat="@drawable/bird_of_paradise_revolved_r"
-                        tools:layout_editor_absoluteX="-1dp" />
-
-                    <TextView
-                        android:id="@+id/title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Revolved Bird of Paradise "
-                        android:textColor="#000000"
-                        android:textSize="30sp"
-                        tools:layout_editor_absoluteX="15dp"
-                        tools:layout_editor_absoluteY="13dp" />
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="355dp"
-                        android:layout_height="201dp"
-                        android:text="From Revolved Chair pose, the lower arm reaches back around the legs as the upper arm wraps around the back and the fingers of the respective hands eventually meet and interlace. One foot stays rooted into the earth and straightens while the opposite leg comes up with a bent knee. Once you are standing upright extend the leg toward the sky. The ribcage is lifted and the heart is open in the full expression of the pose. The gaze is forward."
-                        tools:layout_editor_absoluteX="12dp"
-                        tools:layout_editor_absoluteY="53dp" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_warrior_1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/CresentMoon"
-                        android:layout_width="380dp"
-                        android:layout_height="309dp"
-                        app:srcCompat="@drawable/crescent_moon_r"
-                        tools:layout_editor_absoluteX="-1dp"
-                        tools:layout_editor_absoluteY="106dp" />
-
-                    <TextView
-                        android:id="@+id/title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Crescent Moon"
-                        android:textColor="#000000"
-                        android:textSize="30sp"
-                        tools:layout_editor_absoluteX="87dp"
-                        tools:layout_editor_absoluteY="16dp" />
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="355dp"
-                        android:layout_height="201dp"
-                        android:text="From Upward Salute pose, extend upwards toward the sky as you bend to one side, lengthening the opposite side of the rib cage and stretch."
-                        tools:layout_editor_absoluteX="12dp"
-                        tools:layout_editor_absoluteY="67dp" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
+                app:layout_constraintTop_toTopOf="parent"/>
         </LinearLayout>
     </ScrollView>
 
