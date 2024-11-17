@@ -58,6 +58,7 @@
                         android:id="@+id/CresentMoon"
                         android:layout_width="380dp"
                         android:layout_height="309dp"
+                        app:srcCompat="@drawable/Archer_R"
                         tools:layout_editor_absoluteX="-1dp"
                         tools:layout_editor_absoluteY="118dp" />
 
