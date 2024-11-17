@@ -107,13 +107,13 @@
             <!--                android:textSize="20sp" />-->
             <!-- Signup Button -->
             <Button
-                android:id="@+id/signup_btnGeneral"
+                android:id="@+id/update_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/black"
                 android:padding="3dp"
-                android:text="Sign Up"
+                android:text="Update Information"
                 android:textColor="#FFFFFF" />
 
             <!-- Back Button -->
