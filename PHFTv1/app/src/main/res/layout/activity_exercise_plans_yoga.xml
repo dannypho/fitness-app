@@ -51,12 +51,13 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <LinearLayout
+                    android:id="@+id/mountain_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/title_mountain"
+                        android:id="@+id/mountain_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -66,26 +67,29 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/mountain_duration"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="(1 Minute)"
                         android:textAlignment="center"
                         android:textStyle="italic" />
 
+                    <ImageView
+                        android:id="@+id/mountain_pic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="222dp"
+                        android:contentDescription="pose pictue"
+                        app:srcCompat="@drawable/yoga_mountain" />
+
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/mountain_desc"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="The body stands upright with feet together, evenly distributing weight on the feet's four corners. The pelvis is tucked, the ribcage lifted, and the neck aligns naturally with the spine, with the chin slightly tucked. Shoulders are relaxed, rotated back and down, arms rest at the sides, and the gaze is forward."
+                        android:layout_marginBottom="15dp"
+                        android:text="Mountain Pose is a great place to start. Ground your feet and press evenly through all four corners of each foot. Stretch your arms towards the floor and draw your abdominals in and up.  Hold for five to eight breaths to get focused and ready to move deeper."
                         android:textAlignment="center" />
 
-                    <ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="222dp"
-                        app:srcCompat="@drawable/yoga_mountain" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -93,12 +97,55 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_upward_salute"
                 android:layout_width="match_parent"
-                android:layout_height="554dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/upward_salute_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/upward_salute_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Upward Salute"
+                        android:textAlignment="center"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/upward_salute_duration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="(1 Minute)"
+                        android:textAlignment="center"
+                        android:textStyle="italic" />
+
+                    <ImageView
+                        android:id="@+id/upward_salute_pic"
+                        android:layout_width="match_parent"
+                        android:layout_height="222dp"
+                        android:contentDescription="pose pictue"
+                        app:srcCompat="@drawable/yoga_upward_salute" />
+
+                    <TextView
+                        android:id="@+id/upward_salute_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="From Mountain Pose, lift your arms up overhead and press your palms firmly together. Keep the tops of your shoulders released away from your ears and activate your triceps. Keep the abdominals engaged and the legs firm.  Hold for five to eight breaths."
+                        android:textAlignment="center" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_warrior_1"
@@ -107,7 +154,373 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/warrior_1_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/warrior_1_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Warrior I"
+                        android:textAlignment="center"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/warrior_1_duration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="(1 Minute)"
+                        android:textAlignment="center"
+                        android:textStyle="italic" />
+
+                    <ImageView
+                        android:id="@+id/warrior_1_pic"
+                        android:layout_width="match_parent"
+                        android:layout_height="222dp"
+                        android:contentDescription="pose pictue"
+                        app:srcCompat="@drawable/yoga_warrior_1" />
+
+                    <TextView
+                        android:id="@+id/warrior_1_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="From Upward Salute, step your left foot back one of your own leg’s length apart. Press the outer left foot in to the mat as you lunge your right knee forward. The left foot should be pointing at a seventy-five degree angle. Make sure the knee stays above the ankle.  Hold for five to eight breaths."
+                        android:textAlignment="center" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_warrior_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/warrior_1_title2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Warrior II"
+                        android:textAlignment="center"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/warrior_1_duration2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="(1 Minute)"
+                        android:textAlignment="center"
+                        android:textStyle="italic" />
+
+                    <ImageView
+                        android:id="@+id/warrior_1_pic2"
+                        android:layout_width="match_parent"
+                        android:layout_height="222dp"
+                        android:contentDescription="pose pictue"
+                        app:srcCompat="@drawable/yoga_warrior_2" />
+
+                    <TextView
+                        android:id="@+id/warrior_1_desc2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="From Warrior I Pose on the right side, open the arms, hips, and waist to the side as you gaze forward over your right hand. Your back toes can open up a bit more than seventy-five degrees, but keep the toes a little forward of the heel still. Make sure the front knee doesn’t roll in. Draw your abs in and and keep the torso even between the legs.  Stay and breathe for five to eight deep breaths."
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_triangle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/warrior_1_title3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Triangle"
+                        android:textAlignment="center"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/warrior_1_duration3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="(1 Minute)"
+                        android:textAlignment="center"
+                        android:textStyle="italic" />
+
+                    <ImageView
+                        android:id="@+id/warrior_1_pic3"
+                        android:layout_width="match_parent"
+                        android:layout_height="222dp"
+                        android:contentDescription="pose pictue"
+                        app:srcCompat="@drawable/yoga_warrior_1" />
+
+                    <TextView
+                        android:id="@+id/warrior_1_desc3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="From Warrior II, straighten the front leg and hinge forward placing the hand on the knee, shin, or a block. Imagine yourself between two narrow walls.  Hold for five to eight breaths, then come back up to standing."
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_extended_side_angle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/warrior_1_title4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Extended Side Angle"
+                        android:textAlignment="center"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/warrior_1_duration4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="(1 Minute)"
+                        android:textAlignment="center"
+                        android:textStyle="italic" />
+
+                    <ImageView
+                        android:id="@+id/warrior_1_pic4"
+                        android:layout_width="match_parent"
+                        android:layout_height="222dp"
+                        android:contentDescription="pose pictue"
+                        app:srcCompat="@drawable/yoga_warrior_1" />
+
+                    <TextView
+                        android:id="@+id/warrior_1_desc4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="Re-bend the front knee and place the outer right forearm on the upper right thigh. Extend the top arm overhead and lengthen from the outer edge of the left foot all the way through the left fingers.  Hold for five to eight breaths.  Drop your hands alongside the front foot and step forward, folding in to both legs. Come back up through Upward Salute and repeat postures 3-6 on the left side."
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_downward_facing_dog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/warrior_1_title5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Downward-Facing Dog"
+                        android:textAlignment="center"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/warrior_1_duration5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="(1 Minute)"
+                        android:textAlignment="center"
+                        android:textStyle="italic" />
+
+                    <ImageView
+                        android:id="@+id/warrior_1_pic5"
+                        android:layout_width="match_parent"
+                        android:layout_height="222dp"
+                        android:contentDescription="pose pictue"
+                        app:srcCompat="@drawable/yoga_warrior_1" />
+
+                    <TextView
+                        android:id="@+id/warrior_1_desc5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="After doing the postures on the left side, instead of folding forward, place both hands on the floor on either side of the left foot from Extended Side Angle and step the left foot back to meet the right as you come into Downward Facing Dog Pose.  Press firmly into your hands and roll your upper arms outwards. Lengthen up through your torso and keep your abdominals engaged. Actively use your legs to keep bringing your torso back in space.  If you need to bend your knees, that’s ok!  Hold here for eight to ten breaths."
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_forearm_plank"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/warrior_1_title6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Forearm Plank"
+                        android:textAlignment="center"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/warrior_1_duration6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="(1 Minute)"
+                        android:textAlignment="center"
+                        android:textStyle="italic" />
+
+                    <ImageView
+                        android:id="@+id/warrior_1_pic6"
+                        android:layout_width="match_parent"
+                        android:layout_height="222dp"
+                        android:contentDescription="pose pictue"
+                        app:srcCompat="@drawable/yoga_warrior_1" />
+
+                    <TextView
+                        android:id="@+id/warrior_1_desc6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="From Downward Facing Dog Pose, roll out to Plank (or drop to hands and knees) and place your forearms on the floor. Make sure your body forms a straight line from head to toe.  Keep your abdominals engaged and hold for thirty to sixty seconds to fire up your powerhouse for the day."
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_cobra"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/warrior_1_title7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cobra"
+                        android:textAlignment="center"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/warrior_1_duration7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="(1 Minute)"
+                        android:textAlignment="center"
+                        android:textStyle="italic" />
+
+                    <ImageView
+                        android:id="@+id/warrior_1_pic7"
+                        android:layout_width="match_parent"
+                        android:layout_height="222dp"
+                        android:contentDescription="pose pictue"
+                        app:srcCompat="@drawable/yoga_warrior_1" />
+
+                    <TextView
+                        android:id="@+id/warrior_1_desc7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="Lower down to your belly from forearm plank, walk your hands slightly forward if need be, and lift your chest up into a Baby Cobra. Pull your shoulder blades together and down your back and breathe into the front of your body.  Hold for five breaths, lower down and repeat two more times."
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_extended_child"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/warrior_1_title8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Extended Child's Pose"
+                        android:textAlignment="center"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/warrior_1_duration8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="(1 Minute)"
+                        android:textAlignment="center"
+                        android:textStyle="italic" />
+
+                    <ImageView
+                        android:id="@+id/warrior_1_pic8"
+                        android:layout_width="match_parent"
+                        android:layout_height="222dp"
+                        android:contentDescription="pose pictue"
+                        app:srcCompat="@drawable/yoga_warrior_1" />
+
+                    <TextView
+                        android:id="@+id/warrior_1_desc8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="Finish by pressing back to Child’s Pose to stretch the entire back body and focus on what you would like to achieve for the day. Stay as long as you can, or want to, and finish with Savasana, or press to stand and roll up for an incredible day."
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
         </LinearLayout>
     </ScrollView>
 

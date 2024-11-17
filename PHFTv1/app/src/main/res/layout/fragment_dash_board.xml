@@ -447,7 +447,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/icons8_purchase_64"
-                    app:layout_constraintBottom_toTopOf="@+id/textView4"
+                    app:layout_constraintBottom_toTopOf="@+id/mountain_duration"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
@@ -455,7 +455,7 @@
                     app:tint="@color/green" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/mountain_duration"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
