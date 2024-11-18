@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+    <layouts>
+      <layout url="file://$PROJECT_DIR$/PHFTv1/app/src/main/res/layout/activity_workouts.xml">
+        <config>
+          <theme>@style/Theme.PHFTv1</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/PHFTv1/app/src/main/res/layout/new_dashboard.xml">
+        <config>
+          <theme>@style/Theme.PHFTv1</theme>
+        </config>
+      </layout>
+    </layouts>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17efb189-215f-4bee-849f-bf4bbf6dbb29" name="Changes" comment="" />
+    <list default="true" id="17efb189-215f-4bee-849f-bf4bbf6dbb29" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHFTv1/app/src/main/java/com/example/View/ProfileFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PHFTv1/app/src/main/java/com/example/View/ProfileFragment.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,6 +77,14 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="layoutResourceFile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -95,7 +123,7 @@
     "git-widget-placeholder": "Tracking",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Danny/Documents/CSE/3310/PHFTv1/settings.gradle.kts",
+    "last_opened_file_path": "C:/Users/Danny/Documents/CSE/3310",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",

@@ -75,6 +75,8 @@
         <activity
             android:name=".UpdateUserInfo"
             android:exported="true"/>
+        <activity android:name=".Workouts"
+            />
         <activity
             android:name=".MainActivity"
             android:exported="true">
