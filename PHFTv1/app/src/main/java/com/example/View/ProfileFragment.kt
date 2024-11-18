@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import com.example.backend.SessionManager
 import com.example.phftv1.ActivityCategories
+import com.example.phftv1.ExercisePlans
 import com.example.phftv1.GoalSetting
 import com.example.phftv1.MainActivity
 import com.example.phftv1.PaymentIntegration
@@ -89,6 +90,10 @@ class ProfileFragment : Fragment() {
         }
         subscriptions.setOnClickListener {
             val intent = Intent(requireContext(), Subscription::class.java)
+            startActivity(intent)
+        }
+        excercisePlan.setOnClickListener {
+            val intent = Intent(requireContext(), ExercisePlans::class.java)
             startActivity(intent)
         }
 

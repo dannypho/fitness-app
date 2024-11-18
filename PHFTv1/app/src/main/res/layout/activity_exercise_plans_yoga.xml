@@ -151,6 +151,7 @@
                 android:id="@+id/card_warrior_1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -202,7 +203,8 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_warrior_2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -248,7 +250,8 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_triangle"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -294,7 +297,8 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_extended_side_angle"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -340,7 +344,8 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_downward_facing_dog"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -386,7 +391,8 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_forearm_plank"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -432,7 +438,8 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_cobra"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -478,7 +485,8 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_extended_child"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"

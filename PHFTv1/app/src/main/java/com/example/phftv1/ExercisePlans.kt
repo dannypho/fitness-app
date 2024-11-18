@@ -6,8 +6,6 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class ExercisePlans : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,17 +51,26 @@ class ExercisePlans : AppCompatActivity() {
 
     private fun setupPresetRoutineButtons() {
         findViewById<Button>(R.id.preset_routine_yoga).setOnClickListener {
-            Toast.makeText(this, "Yoga Routine Selected", Toast.LENGTH_SHORT).show()
+            setContentView(R.layout.activity_exercise_plans_yoga)
+            findViewById<Button>(R.id.back_button_exercise).setOnClickListener {
+                finish() // Closes the current activity and goes back
+            }
             // Show Yoga routine details or start the routine
         }
 
         findViewById<Button>(R.id.preset_routine_hiit).setOnClickListener {
-            Toast.makeText(this, "HIIT Routine Selected", Toast.LENGTH_SHORT).show()
+            setContentView(R.layout.activity_exercise_plans_hiit)
+            findViewById<Button>(R.id.back_button_exercise).setOnClickListener {
+                finish() // Closes the current activity and goes back
+            }
             // Show HIIT routine details or start the routine
         }
 
         findViewById<Button>(R.id.preset_routine_weightlifting).setOnClickListener {
-            Toast.makeText(this, "Weightlifting Routine Selected", Toast.LENGTH_SHORT).show()
+            setContentView(R.layout.activity_exercise_plans_weightlifting)
+            findViewById<Button>(R.id.back_button_exercise).setOnClickListener {
+                finish() // Closes the current activity and goes back
+            }
             // Show Weightlifting routine details or start the routine
         }
     }
