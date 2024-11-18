@@ -7,14 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 import com.example.backend.SessionManager
-import com.example.phftv1.ActivityCategories
-import com.example.phftv1.GoalSetting
 import com.example.phftv1.MainActivity
 import com.example.phftv1.PaymentIntegration
+import com.example.phftv1.PresetExcerciePlan
 import com.example.phftv1.R
-import com.example.phftv1.ReviewTrainer
 import com.example.phftv1.Subscription
 import com.example.phftv1.Tracking
 import com.example.phftv1.UpdateUserInfo
@@ -89,6 +86,10 @@ class ProfileFragment : Fragment() {
         }
         subscriptions.setOnClickListener {
             val intent = Intent(requireContext(), Subscription::class.java)
+            startActivity(intent)
+        }
+        excercisePlan.setOnClickListener {
+            val intent = Intent(requireContext(), PresetExcerciePlan::class.java)
             startActivity(intent)
         }
 
