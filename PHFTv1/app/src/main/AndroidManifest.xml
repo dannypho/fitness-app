@@ -16,6 +16,15 @@
             android:name=".PresetExcerciePlan"
             android:exported="false" />
         <activity
+            android:name=".PresetExcerciePlanWeightlifting"
+            android:exported="false" />
+        <activity
+            android:name=".PresetExcerciePlanHIIT"
+            android:exported="false" />
+        <activity
+            android:name=".PresetExcerciePlanYoga"
+            android:exported="false" />
+        <activity
             android:name=".cardInput"
             android:exported="false" />
         <activity

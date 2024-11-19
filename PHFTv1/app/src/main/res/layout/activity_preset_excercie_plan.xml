@@ -40,6 +40,7 @@
             android:padding="16dp">
 
             <!-- Title -->
+
             <TextView
                 android:id="@+id/titleText"
                 android:layout_width="match_parent"
@@ -364,6 +365,57 @@
                         android:layout_marginBottom="8dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/weightlifting" />
+
+                    <!--                    <Button-->
+                    <!--                        android:id="@+id/btn_start_plan4"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:text="Start Plan"-->
+                    <!--                        android:textColor="@color/white"-->
+                    <!--                        android:backgroundTint="@color/green"-->
+                    <!--                        android:layout_gravity="end" />-->
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_plan7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:elevation="8dp"
+                app:cardCornerRadius="12dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/jetBlack"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/exercise_title7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="Yoga"
+                        android:textColor="@color/green"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/exercise_description7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Connect the body, breath, and mind. Use physical postures, breathing exercises, and meditation to improve overall health."
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <ImageView
+                        android:id="@+id/exercise_image7"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginBottom="8dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/yoga" />
 
                     <!--                    <Button-->
                     <!--                        android:id="@+id/btn_start_plan4"-->

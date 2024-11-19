@@ -9,25 +9,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class PresetExcerciePlan : AppCompatActivity() {
+class PresetExcerciePlanYoga : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_preset_excercie_plan)
+        setContentView(R.layout.activity_exercise_plans_yoga)
 //        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
 //            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
 //            insets
 //        }
 
-        findViewById<Button>(R.id.Pre_btn_back).setOnClickListener {
+        findViewById<Button>(R.id.back_button_exercise).setOnClickListener {
             finish()
         }
-        // view preset weightlift routine
-        findViewById<ImageView>(R.id.exercise_image6).setOnClickListener {
-            val intent = Intent(this, PresetExcerciePlanWeightlifting::class.java)
-            startActivity(intent)
-        }
-
     }
 }
