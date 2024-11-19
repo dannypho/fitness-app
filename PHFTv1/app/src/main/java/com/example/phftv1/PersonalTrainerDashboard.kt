@@ -23,6 +23,11 @@ class PersonalTrainerDashboard : AppCompatActivity() {
             startActivity(intent)
         }
 
+        findViewById<Button>(R.id.btn_create_workout).setOnClickListener {
+            val intent = Intent(this, CreateWorkouts::class.java)
+            startActivity(intent)
+        }
+
 
         findViewById<Button>(R.id.btn_manage_training).setOnClickListener {
             val intent = Intent(this, GoalSetting::class.java)

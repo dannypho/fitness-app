@@ -2,21 +2,18 @@ package com.example.backend
 
 import android.content.ContentValues
 import android.content.Context
-import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import com.example.Model.User
-import com.example.phftv1.Dashboard
 import com.example.Model.TrackingData
-import com.example.phftv1.Tracking
 
-
+// Increment the version (3rd parameter) of SQLiteOpenHelper if creating a new database
 open class DataBaseHelper(context: Context,
                           dbName: String = "phft.db",
                           version: Int = 1,
-) : SQLiteOpenHelper(context, dbName, null, 2) {
+) : SQLiteOpenHelper(context, dbName, null, 3) {
 
     companion object {
         // Login information table constants
@@ -49,6 +46,11 @@ open class DataBaseHelper(context: Context,
         const val COLUMN_HEART_RATE = "heart_rate"
         const val COLUMN_ACTIVITY = "activity"
         const val COLUMN_DATE = "date"
+
+        // Workout table constants
+        const val WORKOUTS_TABLE = "Workouts"
+        const val COLUMN_WORKOUTS_ID = "workouts_id"
+        const val COLUMN_WORKOUTS = "workouts"
     }
 
     // Create the users table with the given columns
@@ -87,6 +89,7 @@ open class DataBaseHelper(context: Context,
 
         db?.execSQL(createGoalsTable)
 
+        // Create metrics table
         val createMetricTable = "CREATE TABLE $METRIC_TABLE (" +
                 "$COLUMN_METRICS_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "$COLUMN_USER_ID TEXT, " +
@@ -99,14 +102,24 @@ open class DataBaseHelper(context: Context,
                 "FOREIGN KEY($COLUMN_USER_ID) REFERENCES $USER_TABLE($COLUMN_USER_ID))"
 
         db?.execSQL(createMetricTable)
+
+        // Create workouts table
+        val createWorkoutsTable = "CREATE TABLE $WORKOUTS_TABLE (" +
+                "$COLUMN_WORKOUTS_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "$COLUMN_WORKOUTS TEXT, " +
+                "$COLUMN_USERNAME TEXT, " +
+                "FOREIGN KEY ($COLUMN_USERNAME) REFERENCES $LOGIN_TABLE($COLUMN_USERNAME))"
+
+        db?.execSQL(createWorkoutsTable)
     }
 
-    // Database schema shouldn't change. Ignore this method
+    // Insert the following execSQL function when creating a new table
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db?.execSQL("DROP TABLE IF EXISTS $USER_TABLE")
         db?.execSQL("DROP TABLE IF EXISTS $GOALS_TABLE")
         db?.execSQL("DROP TABLE IF EXISTS $LOGIN_TABLE")
         db?.execSQL("DROP TABLE IF EXISTS $METRIC_TABLE")
+        db?.execSQL("DROP TABLE IF EXISTS $WORKOUTS_TABLE")
         onCreate(db)
     }
 
@@ -331,6 +344,56 @@ open class DataBaseHelper(context: Context,
         cursor.close()
         db.close()
         return metrics
+    }
+
+    fun getWorkout(username: String): String? {
+        val db = this.readableDatabase
+        var workout: String? = null
+
+        val query = "SELECT $COLUMN_WORKOUTS FROM $WORKOUTS_TABLE WHERE $COLUMN_USERNAME = ?"
+        val cursor = db.rawQuery(query, arrayOf(username))
+
+        if (cursor.moveToFirst()) {
+            workout = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_WORKOUTS))
+        }
+        cursor.close()
+        return workout
+    }
+
+    fun submitWorkout(username: String, workout: String): Boolean {
+        val db = this.writableDatabase
+
+        return try {
+            val existingWorkout = getWorkout(username)
+
+            if (existingWorkout != null) {
+                // Update existing workout
+                val values = ContentValues().apply {
+                    put(COLUMN_WORKOUTS, workout)
+                }
+                val rowsUpdated = db.update(
+                    WORKOUTS_TABLE,
+                    values,
+                    "$COLUMN_USERNAME = ?",
+                    arrayOf(username)
+                )
+                rowsUpdated == 1 // Return true iff one row was updated
+            } else {
+
+                // Insert new workout
+                val values = ContentValues().apply {
+                    put(COLUMN_WORKOUTS, workout)
+                    put(COLUMN_USERNAME, username)
+                }
+                val rowId = db.insert(WORKOUTS_TABLE, null, values)
+                rowId != -1L // Return true if insert was successful
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            false // Return false if an exception occurs
+        } finally {
+            db.close() // Ensure database is closed
+        }
     }
 
 
