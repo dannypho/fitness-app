@@ -28,6 +28,14 @@ class PresetExcerciePlan : AppCompatActivity() {
             val intent = Intent(this, PresetExcerciePlanWeightlifting::class.java)
             startActivity(intent)
         }
+        findViewById<ImageView>(R.id.exercise_image7).setOnClickListener {
+            val intent = Intent(this, PresetExcerciePlanYoga::class.java)
+            startActivity(intent)
+        }
+        findViewById<ImageView>(R.id.exercise_image5).setOnClickListener {
+            val intent = Intent(this, PresetExcerciePlanHIIT::class.java)
+            startActivity(intent)
+        }
 
     }
 }
