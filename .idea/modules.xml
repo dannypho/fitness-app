@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/CSE3310.iml" filepath="$PROJECT_DIR$/.idea/CSE3310.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PHFTv1.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PHFTv1.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PHFTv1.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PHFTv1.app.androidTest.iml" />
     </modules>
   </component>
 </project>

@@ -48,7 +48,6 @@
         android:layout_marginTop="16dp"
         android:layout_above="@id/submit_workout_button"
         android:background="@drawable/rounded_corner_username"
-
         android:textColor="@color/white" />
 
 

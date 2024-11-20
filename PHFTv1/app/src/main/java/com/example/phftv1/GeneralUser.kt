@@ -202,7 +202,8 @@ import com.example.Controller.RegistrationController
 import com.example.backend.DataBaseHelper
 import com.example.Model.User
 
-var userid = "0"
+var global_userid = "0"
+var global_username = ""
 
 class GeneralUser : AppCompatActivity() {
 
@@ -242,7 +243,8 @@ class GeneralUser : AppCompatActivity() {
             if (dbHelper.verifyLogin(username, password)) {
                 Log.i("USER CHECK", "Login successful")
                 RegistrationController().login(username,password,dbHelper)
-                userid = dbHelper.getUID(username)
+                global_username = username
+                global_userid = dbHelper.getUID(username)
                 val intent = Intent(this, Dashboard::class.java)
                 startActivity(intent)
             } else {

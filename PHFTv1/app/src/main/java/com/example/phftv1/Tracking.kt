@@ -54,7 +54,7 @@ class Tracking : AppCompatActivity() {
                 }
                 metricModel = TrackingData(
                     -1,
-                    userid,
+                    global_userid,
                     activityInput.text.toString(),
                     dateInput.text.toString(),
                     stepsInput.text.toString().toIntOrNull() ?: 0,
@@ -71,7 +71,7 @@ class Tracking : AppCompatActivity() {
             // Now this is in the correct scope
             val dataBaseHelper = DataBaseHelper(this)
             dataBaseHelper.addMetric(metricModel)
-            val allMetrics = dataBaseHelper.getMetric(userid)
+            val allMetrics = dataBaseHelper.getMetric(global_userid)
 
             val metricArrayAdapter = ArrayAdapter<String>(this, R.layout.list_item_white_text, R.id.text_view_item, allMetrics.map { it.toString() })
             metricView.adapter = metricArrayAdapter
