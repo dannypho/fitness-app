@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background">
+
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/back_buttonTRACKING"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="16dp" />
+
+    <!-- Single-line EditText -->
+    <EditText
+        android:id="@+id/et_name_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter username"
+        android:layout_margin="16dp"
+        android:inputType="text"
+        android:singleLine="true"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_corner_username"
+        android:padding="16dp"
+
+        android:layout_below="@id/back_buttonTRACKING" />
+
+    <!-- Multi-line EditText -->
+    <EditText
+        android:id="@+id/et_workout_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter workout"
+        android:layout_margin="16dp"
+        android:inputType="textMultiLine"
+        android:gravity="top"
+        android:minLines="4"
+        android:padding="16dp"
+        android:textColorHint="@color/white"
+        android:layout_below="@id/et_name_input"
+        android:layout_marginTop="16dp"
+        android:layout_above="@id/submit_workout_button"
+        android:background="@drawable/rounded_corner_username"
+        android:textColor="@color/white" />
+
+
+    <!-- Submit Workout Button -->
+    <Button
+        android:id="@+id/submit_workout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit Workout"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp" />
+
+</RelativeLayout>

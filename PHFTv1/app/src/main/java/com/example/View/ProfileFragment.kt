@@ -15,6 +15,7 @@ import com.example.phftv1.R
 import com.example.phftv1.Subscription
 import com.example.phftv1.Tracking
 import com.example.phftv1.UpdateUserInfo
+import com.example.phftv1.Workouts
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -81,7 +82,7 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
         }
         workouts.setOnClickListener {
-            val intent = Intent(requireContext(), Tracking::class.java)
+            val intent = Intent(requireContext(), Workouts::class.java)
             startActivity(intent)
         }
         subscriptions.setOnClickListener {

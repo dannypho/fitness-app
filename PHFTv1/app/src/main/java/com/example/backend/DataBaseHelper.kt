@@ -2,19 +2,18 @@ package com.example.backend
 
 import android.content.ContentValues
 import android.content.Context
-import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import com.example.Model.User
-import com.example.phftv1.Dashboard
+import com.example.Model.TrackingData
 
-
+// Increment the version (3rd parameter) of SQLiteOpenHelper if creating a new database
 open class DataBaseHelper(context: Context,
                           dbName: String = "phft.db",
                           version: Int = 1,
-) : SQLiteOpenHelper(context, dbName, null, version) {
+) : SQLiteOpenHelper(context, dbName, null, 3) {
 
     companion object {
         // Login information table constants
@@ -37,6 +36,21 @@ open class DataBaseHelper(context: Context,
         const val GOALS_TABLE = "Goals"
         const val COLUMN_GOAL_ID = "goal_id"
         const val COLUMN_GOAL = "goal"
+
+        // Metric table constants
+        const val METRIC_TABLE = "Metrics"
+        const val COLUMN_METRICS_ID = "metrics_id"
+        const val COLUMN_STEPS = "steps"
+        const val COLUMN_DISTANCE = "distance"
+        const val COLUMN_CALORIES_BURNED = "calories_burned"
+        const val COLUMN_HEART_RATE = "heart_rate"
+        const val COLUMN_ACTIVITY = "activity"
+        const val COLUMN_DATE = "date"
+
+        // Workout table constants
+        const val WORKOUTS_TABLE = "Workouts"
+        const val COLUMN_WORKOUTS_ID = "workouts_id"
+        const val COLUMN_WORKOUTS = "workouts"
     }
 
     // Create the users table with the given columns
@@ -74,13 +88,38 @@ open class DataBaseHelper(context: Context,
                 "FOREIGN KEY($COLUMN_USER_ID) REFERENCES $USER_TABLE($COLUMN_USER_ID))"
 
         db?.execSQL(createGoalsTable)
+
+        // Create metrics table
+        val createMetricTable = "CREATE TABLE $METRIC_TABLE (" +
+                "$COLUMN_METRICS_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "$COLUMN_USER_ID TEXT, " +
+                "$COLUMN_STEPS INTEGER, " +
+                "$COLUMN_DISTANCE REAL, " +
+                "$COLUMN_CALORIES_BURNED REAL, " +
+                "$COLUMN_HEART_RATE INTEGER, " +
+                "$COLUMN_ACTIVITY TEXT, " +
+                "$COLUMN_DATE TEXT, " +
+                "FOREIGN KEY($COLUMN_USER_ID) REFERENCES $USER_TABLE($COLUMN_USER_ID))"
+
+        db?.execSQL(createMetricTable)
+
+        // Create workouts table
+        val createWorkoutsTable = "CREATE TABLE $WORKOUTS_TABLE (" +
+                "$COLUMN_WORKOUTS_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "$COLUMN_WORKOUTS TEXT, " +
+                "$COLUMN_USERNAME TEXT, " +
+                "FOREIGN KEY ($COLUMN_USERNAME) REFERENCES $LOGIN_TABLE($COLUMN_USERNAME))"
+
+        db?.execSQL(createWorkoutsTable)
     }
 
-    // Database schema shouldn't change. Ignore this method
+    // Insert the following execSQL function when creating a new table
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        db?.execSQL("DROP TABLE $USER_TABLE")
-        db?.execSQL("DROP TABLE $GOALS_TABLE")
-        db?.execSQL("DROP TABLE $LOGIN_TABLE")
+        db?.execSQL("DROP TABLE IF EXISTS $USER_TABLE")
+        db?.execSQL("DROP TABLE IF EXISTS $GOALS_TABLE")
+        db?.execSQL("DROP TABLE IF EXISTS $LOGIN_TABLE")
+        db?.execSQL("DROP TABLE IF EXISTS $METRIC_TABLE")
+        db?.execSQL("DROP TABLE IF EXISTS $WORKOUTS_TABLE")
         onCreate(db)
     }
 
@@ -101,6 +140,8 @@ open class DataBaseHelper(context: Context,
         Log.i("content values test:",cv.toString())
         val insert = db.insert(USER_TABLE, null, cv)
         Log.d("DatabaseOperation", "Insert result for addUser: $insert")
+
+        db.close()
         return insert != -1L
     }
     // Add a goal to the goals table
@@ -133,7 +174,7 @@ open class DataBaseHelper(context: Context,
             } while (cursor.moveToNext())
         }
         cursor.close()
-
+        db.close()
         return goals
     }
 
@@ -229,7 +270,7 @@ open class DataBaseHelper(context: Context,
         return rowsAffected > 0
     }
 
-    fun addLoginInfo(username: String, password: String, UID: String) {
+    fun addLoginInfo(username: String, password: String, UID: String): Boolean {
         val db = this.writableDatabase
         val cv = ContentValues()
 
@@ -239,8 +280,10 @@ open class DataBaseHelper(context: Context,
         cv.put(COLUMN_USER_ID, UID)
 
         // Insert the login information into LOGIN_TABLE
-         db.insert(LOGIN_TABLE, null, cv)
+        val insert = db.insert(LOGIN_TABLE, null, cv)
 
+
+        return insert != -1L
 
     }
 
@@ -254,6 +297,104 @@ open class DataBaseHelper(context: Context,
         }
     }
 
+    fun addMetric(metricModel: TrackingData): Boolean
+    {
+        val db = this.writableDatabase
+        val cv = ContentValues()
+
+        cv.put(COLUMN_USER_ID, metricModel.userId)
+        cv.put(COLUMN_STEPS, metricModel.steps)
+        cv.put(COLUMN_DISTANCE, metricModel.distance)
+        cv.put(COLUMN_CALORIES_BURNED, metricModel.caloriesBurned)
+        cv.put(COLUMN_HEART_RATE, metricModel.heartRate)
+        cv.put(COLUMN_ACTIVITY, metricModel.activityType)
+        cv.put(COLUMN_DATE, metricModel.date)
+
+        val insert = db.insert(METRIC_TABLE, null, cv)
+        db.close()
+
+        return insert != -1L
+    }
+
+    fun getMetric(userID: String): List<TrackingData> {
+        val metrics = mutableListOf<TrackingData>()
+        val db = this.readableDatabase
+
+        // Query to get all metrics from a user_id
+        val cursor = db.rawQuery("SELECT * FROM $METRIC_TABLE WHERE $COLUMN_USER_ID = ?", arrayOf(userID))
+
+        // Loop through the cursor to extract data
+        if (cursor.moveToFirst()) {
+            do {
+                val metricID = cursor.getInt(0)
+                val userID = cursor.getString(1)
+                val steps = cursor.getInt(2)
+                val distance = cursor.getDouble(3)
+                val caloriesBurned = cursor.getDouble(4)
+                val heartRate = cursor.getInt(5)
+                val activity = cursor.getString(6)
+                val date = cursor.getString(7)
+                val newMetric = TrackingData(metricID, userID, activity, date, steps, distance, caloriesBurned, heartRate)
+                metrics.add(newMetric)
+            } while (cursor.moveToNext())
+        }
+        else {
+            // Invalid query
+        }
+        cursor.close()
+        db.close()
+        return metrics
+    }
+
+    fun getWorkout(username: String): String? {
+        val db = this.readableDatabase
+        var workout: String? = null
+
+        val query = "SELECT $COLUMN_WORKOUTS FROM $WORKOUTS_TABLE WHERE $COLUMN_USERNAME = ?"
+        val cursor = db.rawQuery(query, arrayOf(username))
+
+        if (cursor.moveToFirst()) {
+            workout = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_WORKOUTS))
+        }
+        cursor.close()
+        return workout
+    }
+
+    fun submitWorkout(username: String, workout: String): Boolean {
+        val db = this.writableDatabase
+
+        return try {
+            val existingWorkout = getWorkout(username)
+
+            if (existingWorkout != null) {
+                // Update existing workout
+                val values = ContentValues().apply {
+                    put(COLUMN_WORKOUTS, workout)
+                }
+                val rowsUpdated = db.update(
+                    WORKOUTS_TABLE,
+                    values,
+                    "$COLUMN_USERNAME = ?",
+                    arrayOf(username)
+                )
+                rowsUpdated == 1 // Return true iff one row was updated
+            } else {
+
+                // Insert new workout
+                val values = ContentValues().apply {
+                    put(COLUMN_WORKOUTS, workout)
+                    put(COLUMN_USERNAME, username)
+                }
+                val rowId = db.insert(WORKOUTS_TABLE, null, values)
+                rowId != -1L // Return true if insert was successful
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            false // Return false if an exception occurs
+        } finally {
+            db.close() // Ensure database is closed
+        }
+    }
 
 
 }
