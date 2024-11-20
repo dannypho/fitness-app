@@ -75,18 +75,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17efb189-215f-4bee-849f-bf4bbf6dbb29" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/PHFTv1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/PHFTv1.app.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/PHFTv1.app.androidTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/PHFTv1.app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/PHFTv1.app.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/PHFTv1.app.unitTest.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHFTv1/app/src/main/java/com/example/phftv1/GeneralUser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PHFTv1/app/src/main/java/com/example/phftv1/GeneralUser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHFTv1/app/src/main/java/com/example/phftv1/Tracking.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PHFTv1/app/src/main/java/com/example/phftv1/Tracking.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHFTv1/app/src/main/java/com/example/phftv1/Workouts.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PHFTv1/app/src/main/java/com/example/phftv1/Workouts.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHFTv1/app/src/main/res/layout/activity_create_workouts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PHFTv1/app/src/main/res/layout/activity_create_workouts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHFTv1/app/src/main/res/layout/activity_workouts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PHFTv1/app/src/main/res/layout/activity_workouts.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

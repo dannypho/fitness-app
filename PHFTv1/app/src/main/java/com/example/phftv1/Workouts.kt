@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -26,9 +27,8 @@ class Workouts : AppCompatActivity() {
         showWorkout.setOnClickListener {
             val workout = dbHelper.getWorkout(global_username)
             if (workout != null) {
-                Toast.makeText(this, workout, Toast.LENGTH_SHORT).show()
-                val workoutInput = findViewById<EditText>(R.id.et_workout_input)
-                workoutInput.setText(workout)
+                val workoutInput = findViewById<TextView>(R.id.tv_workout_input)
+                workoutInput.text = workout
             }
             else {
                 Toast.makeText(this, "No workout found for user: $global_username", Toast.LENGTH_SHORT).show()

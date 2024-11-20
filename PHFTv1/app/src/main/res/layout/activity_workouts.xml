@@ -45,15 +45,14 @@
             android:layout_marginBottom="10dp"/>
 
         <!-- Multi-line EditText -->
-        <EditText
-            android:id="@+id/et_workout_input"
+        <TextView
+            android:id="@+id/tv_workout_input"
             android:layout_width="match_parent"
             android:layout_height="613dp"
             android:layout_margin="16dp"
             android:background="@drawable/rounded_corner_username"
             android:gravity="top"
             android:hint="My workout"
-            android:inputType="textMultiLine"
             android:minLines="4"
             android:padding="16dp"
             android:textColor="@color/white"
