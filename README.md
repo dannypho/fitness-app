@@ -1,6 +1,18 @@
 # Personal Health and Fitness Tracker App
 
+Group project for CSE-3310 Fundamentals of Software Engineering
+
+My role in the project involved managing the backend (handling and creating SQLite database tables and functions), general app logic, and XML editing.
+
 This is a Health and Fitness Tracker app that helps users track their fitness goals, monitor their progress, set and review workout plans, and manage subscriptions. The app consists of various features such as tracking activity, goal setting, progress monitoring, and more.
+
+## Project assumptions
+* Assume all users over the age of 18 (for under 18 clients, an adult guardian is needed).
+* Ignore any international shipping for users.
+* Ignore any cross-platform wearable devices compatible issues.
+* Ignore any legal issues, assume all personal trainers pass background check.
+* No need to do real debit/credit card validation, just make sure Credit card number is 16 digits, Card Expiration date has the format “mmyy” and the Security code is 3 digits.
+
 
 ## Project Structure
 
