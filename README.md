@@ -16,7 +16,7 @@ This is a Health and Fitness Tracker app that helps users track their fitness go
 
 ## Project Structure
 
-## 1. Main Activity
+## 1. Main Activity - MainActivity
 * The entry point of the app.
 * Displays the current time and date on the welcome screen.
 * Provides buttons to navigate to various parts of the app:
@@ -50,39 +50,47 @@ This is a Health and Fitness Tracker app that helps users track their fitness go
 ## 5. Session Manager - SessionManager (Backend Class)
 * Manages user sessions and stores current user data (name, age, weight, height) which is used throughout the app.
 
-## 6. SignUp, Login, and Guest User Flow - GeneralUser, GuestUser, SignUp
+## 6. Database Helper - DatabaseHelper
+The database helper manages the app's SQLite database, including creating, updating, and querying tables for storing and retrieving data efficiently.
+
+#### Key Features:
+1. **Table Creation:** Handles the creation of multiple tables required for the app (e.g., users, fitness goals, and subscriptions).
+2. **CRUD Operations:** Simplifies Create, Read, Update, and Delete operations for various entities.
+3. **Database Initialization:** Ensures that the database is initialized with the correct schema when the app is launched.
+
+## 7. SignUp, Login, and Guest User Flow - GeneralUser, GuestUser, SignUp
 * SignUp: Allows a new user to sign up.
 * GeneralUser: Allows a general user to log in with an existing account.
 * GuestUser: Allows a guest user to access limited functionality without logging in.
 
-## 7. Goal Setting - GoalSetting
+## 8. Goal Setting - GoalSetting
 * Allows users to set their fitness goals such as weight loss, steps, etc.
 
-## 8. Activity Categories - ActivityCategories
+## 9. Activity Categories - ActivityCategories
 * Provides a list of activity categories for users to choose from.
 
-## 9. Tracking - Tracking
+## 10. Tracking - Tracking
 * Displays the user's activity tracking progress.
 
-## 10. Subscription - Subscription
+## 11. Subscription - Subscription
 * Allows users to manage their subscription to different fitness plans.
 
-## 11. Payment Integration - PaymentIntegration
+## 12. Payment Integration - PaymentIntegration
 * Provides a way for users to purchase workout plans.
 
-## 12. Trainer Reviews - ReviewTrainer
+## 13. Trainer Reviews - ReviewTrainer
 * Allows users to review and rate personal trainers.
 
-## 13. Preset Exercise Plan - PresetExcerciePlan
+## 14. Preset Exercise Plan - PresetExcerciePlan
 * Provides predefined exercise plans for the users to follow.
 
-## 14. Workouts - Workouts
+## 15. Workouts - Workouts
 * Provides a list of available workouts that users can follow and track.
 
-## 15. Update User Info - UpdateUserInfo
+## 16. Update User Info - UpdateUserInfo
 * Allows users to update their profile information.
 
-## 16. Multi-Pie Chart - MultiPieChartScreen
+## 17. Multi-Pie Chart - MultiPieChartScreen
 * Displays a multi-pie chart representing user progress toward multiple goals.
 
 ## Features
